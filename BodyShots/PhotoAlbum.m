@@ -41,10 +41,9 @@
 + (void)importPhoto:(NSURL *)photoURL complete:(void (^)())complete {
   ALAssetsLibrary* assetLibrary = [[ALAssetsLibrary alloc] init];
   [assetLibrary assetForURL:photoURL resultBlock:^(ALAsset *asset) {
-    UIImage *currentImage = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage]];
-    NSData *currentImageData = UIImagePNGRepresentation(currentImage);
-    NSString* photoPath = [NSString stringWithFormat:@"%@/%@", [NSBundle mainBundle].documentsPath, asset.defaultRepresentation.filename];
-    [currentImageData writeToFile:photoPath atomically:YES];
+    UIImage *currentImage = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage] scale:asset.defaultRepresentation.scale orientation:(UIImageOrientation)asset.defaultRepresentation.orientation];
+    NSData *currentImageData = UIImageJPEGRepresentation(currentImage, 1.0f);
+    [currentImageData writeToFile:[self uniquePhotoPath] atomically:YES];
     complete();
   } failureBlock:^(NSError *error) {
     NSLog(@"%@", error);
@@ -71,5 +70,26 @@
   return photoPaths;
 }
 
++ (NSString*)uniqueFileName {
+  CFUUIDRef uuid = CFUUIDCreate(NULL);
+  CFStringRef uuidString = CFUUIDCreateString(NULL, uuid);
+  CFRelease(uuid);
+  NSString *uniqueFileName = [NSString stringWithFormat:@"%@", (__bridge NSString*)uuidString];
+  CFRelease(uuidString);
+  return uniqueFileName;
+}
+
++ (NSString*)uniquePhotoPath {
+  return [NSString stringWithFormat:@"%@/%@.JPG", [NSBundle mainBundle].documentsPath, [self uniqueFileName]];
+}
+
++ (void)savePhoto:(UIImage*)photo {
+  NSString* photoPath = [self uniquePhotoPath];
+  [UIImageJPEGRepresentation(photo, 1.0f) writeToFile:photoPath atomically:YES];
+}
+
++ (void)deletePhoto:(NSString*)photoPath {
+  [[NSFileManager defaultManager] removeItemAtPath:photoPath error:nil];
+}
 
 @end

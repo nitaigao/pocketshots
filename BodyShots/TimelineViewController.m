@@ -22,10 +22,30 @@
 
 - (void)viewDidLoad {
   self.dataSource = self;
-//  [PhotoAlbum purgeAlbum];
+  [PhotoAlbum purgeAlbum];
+}
+
+- (IBAction)newPhoto:(id)sender {
+  [self performSegueWithIdentifier:@"photo" sender:self];
+}
+
+- (IBAction)trashPhoto:(id)sender {
+  PhotoViewController* viewController = self.viewControllers.firstObject;
+  
+  [PhotoAlbum deletePhoto:viewController.photoPath];
+  [controllers removeObjectAtIndex:viewController.index];
+  
+  UIViewController* previousViewController = [controllers objectAtIndex:viewController.index -1];
+  [self setViewControllers:@[previousViewController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+  
+  for (NSInteger i = 0; i < controllers.count; i++) {
+    PhotoViewController* controller = [controllers objectAtIndex:i];
+    controller.index = i;
+  }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+  [self.navigationController setToolbarHidden:YES animated:NO];
   [controllers removeAllObjects];
   
   [PhotoAlbum iterateImages:^(NSString* photoPath, NSDate* creationDate, NSInteger photoIndex, NSInteger totalPhotos) {

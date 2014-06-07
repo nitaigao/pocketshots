@@ -29,7 +29,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2U-j1-eOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-872" y="18"/>
+            <point key="canvasLocation" x="-576" y="1078"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Ri-fC-djH">
@@ -64,11 +64,47 @@
             </objects>
             <point key="canvasLocation" x="-204" y="1078"/>
         </scene>
+        <!--New Photo View Controller-->
+        <scene sceneID="7bw-ZW-DQZ">
+            <objects>
+                <viewController id="UpV-jV-9e1" customClass="NewPhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xj1-4E-Z0J"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ieo-wb-rAA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Awx-qf-ifv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgY-VW-XUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="1078"/>
+        </scene>
         <!--Timeline View Controller-->
         <scene sceneID="4ko-lT-w2P">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Tn1-Ph-5TT" customClass="TimelineViewController" sceneMemberID="viewController">
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="uqF-1V-Bm9"/>
+                        <barButtonItem systemItem="camera" id="bkN-xn-vbr">
+                            <connections>
+                                <action selector="newPhoto:" destination="Tn1-Ph-5TT" id="QDe-H8-7Dr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="l1n-np-bPH"/>
+                        <barButtonItem systemItem="trash" id="ZFM-AS-VCY">
+                            <connections>
+                                <action selector="trashPhoto:" destination="Tn1-Ph-5TT" id="fvT-1r-yVe"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="rj1-VF-5z2"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="UpV-jV-9e1" kind="modal" identifier="photo" id="v6f-Sp-Q1n"/>
+                    </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujx-Pv-OBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

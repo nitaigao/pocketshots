@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20B771C519864D7092D40871 /* libPods-BodyShots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437FC3C3AAE4BA196FCA684 /* libPods-BodyShots.a */; };
 		4C956BC919435F9200CA299D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C956BC819435F9200CA299D /* AssetsLibrary.framework */; };
+		4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C956BCB194368C600CA299D /* NewPhotoViewController.m */; };
 		4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
 		4CCA8FC71943362B00A3055B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC61943362B00A3055B /* CoreGraphics.framework */; };
 		4CCA8FC91943362B00A3055B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC81943362B00A3055B /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		4437FC3C3AAE4BA196FCA684 /* libPods-BodyShots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BodyShots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C956BC819435F9200CA299D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		4C956BCA194368C600CA299D /* NewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoViewController.h; sourceTree = "<group>"; };
+		4C956BCB194368C600CA299D /* NewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoViewController.m; sourceTree = "<group>"; };
 		4CCA8FC11943362A00A3055B /* BodyShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA8FC41943362B00A3055B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CCA8FC61943362B00A3055B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +150,8 @@
 				4CCA90031943398E00A3055B /* PhotoViewController.m */,
 				4CCA90051943532600A3055B /* ImportPhotosViewController.h */,
 				4CCA90061943532600A3055B /* ImportPhotosViewController.m */,
+				4C956BCA194368C600CA299D /* NewPhotoViewController.h */,
+				4C956BCB194368C600CA299D /* NewPhotoViewController.m */,
 			);
 			path = BodyShots;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */,
 				4CCA90011943387500A3055B /* PhotoAlbum.m in Sources */,
 				4CCA8FFE1943375200A3055B /* TimelineViewController.m in Sources */,
 				4CCA90071943532600A3055B /* ImportPhotosViewController.m in Sources */,

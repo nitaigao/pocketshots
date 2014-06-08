@@ -2,6 +2,12 @@
 
 #import <AssetsLibrary/AssetsLibrary.h>
 
+#import "NSArray+Functional.h"
+
+#import <ImageIO/ImageIO.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+
 @interface NSBundle(Documents)
 
 - (NSString *) documentsPath;
@@ -38,12 +44,15 @@
   return self.photos.count;
 }
 
-+ (void)importPhoto:(NSURL *)photoURL complete:(void (^)())complete {
++ (void)importPhoto:(NSURL *)photoURL complete:(void (^)())complete index:(NSInteger)index {
   ALAssetsLibrary* assetLibrary = [[ALAssetsLibrary alloc] init];
   [assetLibrary assetForURL:photoURL resultBlock:^(ALAsset *asset) {
-    UIImage *currentImage = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullResolutionImage] scale:asset.defaultRepresentation.scale orientation:(UIImageOrientation)asset.defaultRepresentation.orientation];
-    NSData *currentImageData = UIImageJPEGRepresentation(currentImage, 1.0f);
-    [currentImageData writeToFile:[self uniquePhotoPath] atomically:YES];
+
+    CFURLRef url = (__bridge CFURLRef)[NSURL fileURLWithPath:[self uniquePhotoPath]];
+    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, kUTTypeJPEG, 1, NULL);
+    CGImageDestinationAddImage(destination, asset.defaultRepresentation.fullResolutionImage, nil);
+    CGImageDestinationFinalize(destination);
+    
     complete();
   } failureBlock:^(NSError *error) {
     NSLog(@"%@", error);
@@ -90,6 +99,17 @@
 
 + (void)deletePhoto:(NSString*)photoPath {
   [[NSFileManager defaultManager] removeItemAtPath:photoPath error:nil];
+}
+
++ (void)importPhotos:(NSArray *)photoURLs progress:(void(^)(float percent))progress complete:(void(^)())complete {
+  [photoURLs each:^(id url, NSInteger index, NSInteger total) {
+    progress((float)index + 1 / (float)total);
+    [PhotoAlbum importPhoto:url complete:^{
+        if (index + 1 >= total) {
+          complete();
+        }
+      } index:index];
+  }];
 }
 
 @end

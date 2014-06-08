@@ -8,4 +8,6 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView* photo;
 
+- (void)purge;
+
 @end

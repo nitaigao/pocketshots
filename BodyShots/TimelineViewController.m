@@ -3,7 +3,7 @@
 #import "PhotoAlbum.h"
 
 #import "PhotoViewController.h"
-#import "ImportPhotosViewController.h"
+#import "ImportSelectPhotosViewController.h"
 #import <QBImagePickerController/QBImagePickerController.h>
 
 @interface TimelineViewController ()
@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
   self.dataSource = self;
-  [PhotoAlbum purgeAlbum];
+//  [PhotoAlbum purgeAlbum];
 }
 
 - (IBAction)newPhoto:(id)sender {
@@ -31,12 +31,19 @@
 
 - (IBAction)trashPhoto:(id)sender {
   PhotoViewController* viewController = self.viewControllers.firstObject;
+  [viewController purge];
   
-  [PhotoAlbum deletePhoto:viewController.photoPath];
   [controllers removeObjectAtIndex:viewController.index];
   
-  UIViewController* previousViewController = [controllers objectAtIndex:viewController.index -1];
-  [self setViewControllers:@[previousViewController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+  if (controllers.count <= 0) {
+    UIViewController* noPhotosController = [self.storyboard instantiateViewControllerWithIdentifier:@"NoPhotos"];
+    [self setViewControllers:@[noPhotosController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+    [controllers addObject:noPhotosController];
+  }
+  else {
+    PhotoViewController* previousViewController = [controllers objectAtIndex:viewController.index - 1];
+    [self setViewControllers:@[previousViewController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+  }
   
   for (NSInteger i = 0; i < controllers.count; i++) {
     PhotoViewController* controller = [controllers objectAtIndex:i];
@@ -71,10 +78,16 @@
     }
   }];
   
-  if (PhotoAlbum.photoCount <= 0) {
-    ImportPhotosViewController* importPhotosViewController = [[ImportPhotosViewController alloc] init];
-    [self presentViewController:importPhotosViewController animated:YES completion:nil];
+  if (controllers.count <= 0) {
+    UIViewController* noPhotosController = [self.storyboard instantiateViewControllerWithIdentifier:@"NoPhotos"];
+    [self setViewControllers:@[noPhotosController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+    [controllers addObject:noPhotosController];
   }
+
+  
+//  if (PhotoAlbum.photoCount <= 0) {
+//    [self performSegueWithIdentifier:@"setup" sender:self];
+//  }
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(PhotoViewController *)viewController {

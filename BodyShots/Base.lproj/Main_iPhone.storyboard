@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vyi-pk-avX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vyi-pk-avX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
         <!--Photo View Controller-->
@@ -18,7 +18,6 @@
                         <subviews>
                             <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYe-1o-wPf">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -29,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2U-j1-eOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-576" y="1078"/>
+            <point key="canvasLocation" x="-1352" y="1142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Ri-fC-djH">
@@ -44,12 +43,103 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baE-4r-yhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-345" y="34"/>
+            <point key="canvasLocation" x="-1121" y="98"/>
         </scene>
-        <!--Import Photos View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="sMB-7u-0ok">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="raI-Fe-R4L" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gIx-hk-e7I">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9Ch-Aq-WUf" kind="relationship" relationship="rootViewController" id="ZqD-hT-zjP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLr-ti-AfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="458"/>
+        </scene>
+        <!--Setup Import Photos View Controller - Import Photos-->
+        <scene sceneID="d0o-H6-pdx">
+            <objects>
+                <viewController id="9Ch-Aq-WUf" customClass="SetupImportPhotosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3WT-rI-YV3"/>
+                        <viewControllerLayoutGuide type="bottom" id="NFl-VP-mMz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rcI-51-AOO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ren-W8-Ozp">
+                                <rect key="frame" x="138" y="269" width="45" height="30"/>
+                                <state key="normal" title="Import">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RdZ-Px-itI" kind="modal" id="IUK-3y-hij"/>
+                                </connections>
+                            </button>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Would you like to import some photos from your library?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="289" translatesAutoresizingMaskIntoConstraints="NO" id="cYE-Vb-xhB">
+                                <rect key="frame" x="16" y="168" width="289" height="118"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Import Photos" id="69b-e1-AdT">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="ucG-iJ-8mL">
+                            <connections>
+                                <segue destination="jyQ-4w-2VG" kind="push" id="SZs-dA-khI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x6f-wM-PQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="454" y="458"/>
+        </scene>
+        <!--Finish Setup View Controller-->
+        <scene sceneID="Qeg-PY-aAf">
+            <objects>
+                <viewController id="jyQ-4w-2VG" customClass="FinishSetupViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MZc-ff-hZy"/>
+                        <viewControllerLayoutGuide type="bottom" id="iyH-Me-Emb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KLt-r5-nKw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84g-oz-4pf">
+                                <rect key="frame" x="128" y="273" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Uk-BS-AFO">
+                        <barButtonItem key="rightBarButtonItem" title="Finish" id="a0t-YN-PG8">
+                            <connections>
+                                <action selector="finishSetup:" destination="jyQ-4w-2VG" id="fPR-4O-8d9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFV-dC-f9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="458"/>
+        </scene>
+        <!--Import Select Photos View Controller-->
         <scene sceneID="EN1-oi-yLu">
             <objects>
-                <viewController id="gTh-uT-txX" customClass="ImportPhotosViewController" sceneMemberID="viewController">
+                <viewController id="gTh-uT-txX" customClass="ImportSelectPhotosViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wPh-vx-atg"/>
                         <viewControllerLayoutGuide type="bottom" id="QM3-lI-fkY"/>
@@ -59,10 +149,133 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ivi-rd-fZv"/>
+                    <connections>
+                        <segue destination="YfO-nh-dAQ" kind="push" identifier="importing" id="jZZ-4v-E7h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tbd-zm-Mcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-204" y="1078"/>
+            <point key="canvasLocation" x="1278" y="1235"/>
+        </scene>
+        <!--Import Processing Photos View Controller-->
+        <scene sceneID="1Dj-ku-yyT">
+            <objects>
+                <viewController id="YfO-nh-dAQ" customClass="ImportProcessingPhotosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d84-Qq-JbY"/>
+                        <viewControllerLayoutGuide type="bottom" id="zcJ-pq-aTq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R1Q-Si-9HW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Importing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICX-H1-gxw">
+                                <rect key="frame" x="123" y="273" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView appearanceType="aqua" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CKE-T3-yi8">
+                                <rect key="frame" x="85" y="302" width="150" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WcT-Tr-V5m"/>
+                    <connections>
+                        <outlet property="progressBar" destination="CKE-T3-yi8" id="3pv-Wl-fxZ"/>
+                        <segue destination="Y6z-gP-q6e" kind="push" identifier="import_finished" id="WKl-wp-wkb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eM4-9T-Wcn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="1235"/>
+        </scene>
+        <!--Import Finished View Controller-->
+        <scene sceneID="IYe-hh-brh">
+            <objects>
+                <viewController id="Y6z-gP-q6e" customClass="ImportFinishedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="faD-MS-zWt"/>
+                        <viewControllerLayoutGuide type="bottom" id="rgv-y7-SXM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4mX-dt-Yks">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Import Success!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yT-Bu-Vi2">
+                                <rect key="frame" x="98" y="273" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sIC-sc-OFU">
+                        <barButtonItem key="rightBarButtonItem" title="Finish" id="Rhx-Mg-cZv">
+                            <connections>
+                                <action selector="finished:" destination="Y6z-gP-q6e" id="ZBK-od-Ddj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7q-YU-M5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2073" y="1235"/>
+        </scene>
+        <!--No Photos View Controller-->
+        <scene sceneID="dlZ-yp-eCj">
+            <objects>
+                <viewController storyboardIdentifier="NoPhotos" id="1gU-d1-HCP" customClass="NoPhotosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MF7-YA-Awj"/>
+                        <viewControllerLayoutGuide type="bottom" id="XKg-rQ-VH3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vLN-2i-15k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Photos!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJw-cC-K8n">
+                                <rect key="frame" x="117" y="229" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ys-a9-Zhu">
+                                <rect key="frame" x="111" y="258" width="98" height="30"/>
+                                <state key="normal" title="Import Photos">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RdZ-Px-itI" kind="modal" id="cDP-kH-gKV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2G-gO-25i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="1235"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="17u-B9-wJo">
+            <objects>
+                <navigationController id="RdZ-Px-itI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0gF-6u-ROH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bfA-3c-Nc6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gTh-uT-txX" kind="relationship" relationship="rootViewController" id="C9v-a1-D64"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zob-P4-7H4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896" y="1235"/>
         </scene>
         <!--New Photo View Controller-->
         <scene sceneID="7bw-ZW-DQZ">
@@ -80,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgY-VW-XUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="1078"/>
+            <point key="canvasLocation" x="-26" y="-319"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="4ko-lT-w2P">
@@ -104,11 +317,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="UpV-jV-9e1" kind="modal" identifier="photo" id="v6f-Sp-Q1n"/>
+                        <segue destination="raI-Fe-R4L" kind="modal" identifier="setup" id="GMv-br-1Fu"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ujx-Pv-OBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624" y="34"/>
+            <point key="canvasLocation" x="-660" y="106"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -116,4 +330,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="cDP-kH-gKV"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -1,5 +1,7 @@
 #import "PhotoViewController.h"
 
+#import "PhotoAlbum.h"
+
 @interface PhotoViewController ()
 - (void)viewTapped;
 @end
@@ -23,6 +25,8 @@
   }
 }
 
-
+- (void)purge {
+  [PhotoAlbum deletePhoto:photoPath];
+}
 
 @end

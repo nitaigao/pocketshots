@@ -7,7 +7,7 @@
         <!--Photo View Controller-->
         <scene sceneID="as7-j6-hAX">
             <objects>
-                <viewController storyboardIdentifier="PhotoViewController" id="0v1-Up-iqg" customClass="PhotoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="0v1-Up-iqg" customClass="PhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AeT-Mi-dND"/>
                         <viewControllerLayoutGuide type="bottom" id="x9s-b6-cNG"/>
@@ -16,14 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NYe-1o-wPf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wa7-XC-qN4">
+                                <rect key="frame" x="0.0" y="-6" width="320" height="574"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="photo" destination="NYe-1o-wPf" id="hDl-3c-dS7"/>
+                        <outlet property="photo" destination="wa7-XC-qN4" id="9q7-XR-AQL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p2U-j1-eOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -38,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Tn1-Ph-5TT" kind="relationship" relationship="rootViewController" id="Qt7-6w-wPR"/>
+                        <segue destination="Tn1-Ph-5TT" kind="relationship" relationship="rootViewController" id="KsE-Bc-MVo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baE-4r-yhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,10 +297,34 @@
             </objects>
             <point key="canvasLocation" x="-26" y="-319"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="psH-Cs-J9n">
+            <objects>
+                <viewController id="Fzq-Rl-eFy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KN5-Dp-nYY"/>
+                        <viewControllerLayoutGuide type="bottom" id="JUR-Cm-XCh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Ft-kz-ODC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x8I-MC-6II">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iRi-P2-lgW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OpU-Uy-6fU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-660" y="739"/>
+        </scene>
         <!--Timeline View Controller-->
         <scene sceneID="4ko-lT-w2P">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Tn1-Ph-5TT" customClass="TimelineViewController" sceneMemberID="viewController">
+                <pageViewController transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Tn1-Ph-5TT" customClass="TimelineViewController" sceneMemberID="viewController">
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="uqF-1V-Bm9"/>
                         <barButtonItem systemItem="camera" id="bkN-xn-vbr">
@@ -314,7 +340,6 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="rj1-VF-5z2"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="UpV-jV-9e1" kind="modal" identifier="photo" id="v6f-Sp-Q1n"/>
                         <segue destination="raI-Fe-R4L" kind="modal" identifier="setup" id="GMv-br-1Fu"/>
@@ -325,12 +350,15 @@
             <point key="canvasLocation" x="-660" y="106"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="wallpaper.jpg" width="640" height="1136"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="cDP-kH-gKV"/>
+        <segue reference="IUK-3y-hij"/>
     </inferredMetricsTieBreakers>
 </document>

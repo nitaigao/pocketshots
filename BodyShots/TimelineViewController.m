@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
   self.dataSource = self;
-//  [PhotoAlbum purgeAlbum];
+  self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (IBAction)newPhoto:(id)sender {
@@ -58,6 +58,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+  
   [self.navigationController setToolbarHidden:YES animated:NO];
   [controllers removeAllObjects];
   
@@ -89,11 +90,6 @@
     [self setViewControllers:@[noPhotosController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
     [controllers addObject:noPhotosController];
   }
-
-  
-//  if (PhotoAlbum.photoCount <= 0) {
-//    [self performSegueWithIdentifier:@"setup" sender:self];
-//  }
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(PhotoViewController *)viewController {

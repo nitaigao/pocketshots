@@ -14,6 +14,7 @@
 		4C956BC919435F9200CA299D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C956BC819435F9200CA299D /* AssetsLibrary.framework */; };
 		4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C956BCB194368C600CA299D /* NewPhotoViewController.m */; };
 		4CC6EA701944EA9F00582054 /* NoPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */; };
+		4CC6EA731945EB4500582054 /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CC6EA721945EB4500582054 /* wallpaper.jpg */; };
 		4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
 		4CCA8FC71943362B00A3055B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC61943362B00A3055B /* CoreGraphics.framework */; };
 		4CCA8FC91943362B00A3055B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC81943362B00A3055B /* UIKit.framework */; };
@@ -59,6 +60,7 @@
 		4C956BCB194368C600CA299D /* NewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoViewController.m; sourceTree = "<group>"; };
 		4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPhotosViewController.h; sourceTree = "<group>"; };
 		4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPhotosViewController.m; sourceTree = "<group>"; };
+		4CC6EA721945EB4500582054 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wallpaper.jpg; path = ../../../../Desktop/wallpaper.jpg; sourceTree = "<group>"; };
 		4CCA8FC11943362A00A3055B /* BodyShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA8FC41943362B00A3055B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CCA8FC61943362B00A3055B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -213,6 +215,7 @@
 		4CCA8FCB1943362B00A3055B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CC6EA721945EB4500582054 /* wallpaper.jpg */,
 				4CCA8FCC1943362B00A3055B /* BodyShots-Info.plist */,
 				4CCA8FCD1943362B00A3055B /* InfoPlist.strings */,
 				4CCA8FD01943362B00A3055B /* main.m */,
@@ -345,6 +348,7 @@
 				4CCA8FE01943362B00A3055B /* Images.xcassets in Resources */,
 				4CCA8FD81943362B00A3055B /* Main_iPhone.storyboard in Resources */,
 				4CCA8FCF1943362B00A3055B /* InfoPlist.strings in Resources */,
+				4CC6EA731945EB4500582054 /* wallpaper.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

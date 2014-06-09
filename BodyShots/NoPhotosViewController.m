@@ -18,7 +18,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-  [self.navigationController setToolbarHidden:NO animated:YES];
+//  [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 - (void)purge {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20B771C519864D7092D40871 /* libPods-BodyShots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437FC3C3AAE4BA196FCA684 /* libPods-BodyShots.a */; };
+		20B771C519864D7092D40871 /* libPods-PocketShots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */; };
 		4C850D6E194496010005A492 /* FinishSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D6D194496010005A492 /* FinishSetupViewController.m */; };
 		4C850D71194498520005A492 /* ImportFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D70194498520005A492 /* ImportFinishedViewController.m */; };
 		4C850D751944A1AA0005A492 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D741944A1AA0005A492 /* NSArray+Functional.m */; };
@@ -29,7 +29,7 @@
 		4CCA8FE81943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
 		4CCA8FE91943362B00A3055B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC81943362B00A3055B /* UIKit.framework */; };
 		4CCA8FF11943362B00A3055B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA8FEF1943362B00A3055B /* InfoPlist.strings */; };
-		4CCA8FF31943362B00A3055B /* BodyShotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA8FF21943362B00A3055B /* BodyShotsTests.m */; };
+		4CCA8FF31943362B00A3055B /* PocketShotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA8FF21943362B00A3055B /* PocketShotsTests.m */; };
 		4CCA8FFE1943375200A3055B /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA8FFD1943375200A3055B /* TimelineViewController.m */; };
 		4CCA90011943387500A3055B /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90001943387500A3055B /* PhotoAlbum.m */; };
 		4CCA90041943398E00A3055B /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90031943398E00A3055B /* PhotoViewController.m */; };
@@ -44,12 +44,12 @@
 			containerPortal = 4CCA8FB91943362A00A3055B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4CCA8FC01943362A00A3055B;
-			remoteInfo = BodyShots;
+			remoteInfo = PocketShots;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4437FC3C3AAE4BA196FCA684 /* libPods-BodyShots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BodyShots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketShots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C850D6C194496010005A492 /* FinishSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishSetupViewController.h; sourceTree = "<group>"; };
 		4C850D6D194496010005A492 /* FinishSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishSetupViewController.m; sourceTree = "<group>"; };
 		4C850D6F194498520005A492 /* ImportFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportFinishedViewController.h; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		4C956BCA194368C600CA299D /* NewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoViewController.h; sourceTree = "<group>"; };
 		4C956BCB194368C600CA299D /* NewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoViewController.m; sourceTree = "<group>"; };
 		4CA5D0F81946230B005136A4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		4CA5D0FA19462314005136A4 /* PocketShots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PocketShots.entitlements; sourceTree = "<group>"; };
+		4CA5D0FA19462314005136A4 /* PocketShots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PocketShots.entitlements; sourceTree = SOURCE_ROOT; };
 		4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPhotosViewController.h; sourceTree = "<group>"; };
 		4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPhotosViewController.m; sourceTree = "<group>"; };
 		4CC6EA721945EB4500582054 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wallpaper.jpg; path = ../../../../Desktop/wallpaper.jpg; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		4CCA8FE61943362B00A3055B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4CCA8FEE1943362B00A3055B /* PocketShotsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketShotsTests-Info.plist"; sourceTree = "<group>"; };
 		4CCA8FF01943362B00A3055B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4CCA8FF21943362B00A3055B /* BodyShotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BodyShotsTests.m; sourceTree = "<group>"; };
+		4CCA8FF21943362B00A3055B /* PocketShotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PocketShotsTests.m; sourceTree = "<group>"; };
 		4CCA8FFC1943375200A3055B /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		4CCA8FFD1943375200A3055B /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		4CCA8FFF1943387500A3055B /* PhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbum.h; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		4CE058A019448AAB007D01CB /* SetupImportPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupImportPhotosViewController.m; sourceTree = "<group>"; };
 		4CF42D6E19448F7D00F00C4E /* ImportProcessingPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportProcessingPhotosViewController.h; sourceTree = "<group>"; };
 		4CF42D6F19448F7D00F00C4E /* ImportProcessingPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportProcessingPhotosViewController.m; sourceTree = "<group>"; };
-		BD7C404E9BD74F1091FE0EE0 /* Pods-BodyShots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyShots.xcconfig"; path = "Pods/Pods-BodyShots.xcconfig"; sourceTree = "<group>"; };
+		BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketShots.xcconfig"; path = "Pods/Pods-PocketShots.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 				4CCA8FC91943362B00A3055B /* UIKit.framework in Frameworks */,
 				4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */,
 				4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */,
-				20B771C519864D7092D40871 /* libPods-BodyShots.a in Frameworks */,
+				20B771C519864D7092D40871 /* libPods-PocketShots.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,12 +167,11 @@
 		4CCA8FB81943362A00A3055B = {
 			isa = PBXGroup;
 			children = (
-				4CA5D0FA19462314005136A4 /* PocketShots.entitlements */,
-				4CCA8FCA1943362B00A3055B /* BodyShots */,
-				4CCA8FEC1943362B00A3055B /* BodyShotsTests */,
+				4CCA8FCA1943362B00A3055B /* PocketShots */,
+				4CCA8FEC1943362B00A3055B /* PocketShotsTests */,
 				4CCA8FC31943362A00A3055B /* Frameworks */,
 				4CCA8FC21943362A00A3055B /* Products */,
-				BD7C404E9BD74F1091FE0EE0 /* Pods-BodyShots.xcconfig */,
+				BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,12 +193,12 @@
 				4CCA8FC61943362B00A3055B /* CoreGraphics.framework */,
 				4CCA8FC81943362B00A3055B /* UIKit.framework */,
 				4CCA8FE61943362B00A3055B /* XCTest.framework */,
-				4437FC3C3AAE4BA196FCA684 /* libPods-BodyShots.a */,
+				4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4CCA8FCA1943362B00A3055B /* BodyShots */ = {
+		4CCA8FCA1943362B00A3055B /* PocketShots */ = {
 			isa = PBXGroup;
 			children = (
 				4CC6EA711944F2C600582054 /* New Photo */,
@@ -215,12 +214,13 @@
 				4CCA8FFF1943387500A3055B /* PhotoAlbum.h */,
 				4CCA90001943387500A3055B /* PhotoAlbum.m */,
 			);
-			path = BodyShots;
+			path = PocketShots;
 			sourceTree = "<group>";
 		};
 		4CCA8FCB1943362B00A3055B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CA5D0FA19462314005136A4 /* PocketShots.entitlements */,
 				4CC6EA721945EB4500582054 /* wallpaper.jpg */,
 				4CCA8FCC1943362B00A3055B /* PocketShots-Info.plist */,
 				4CCA8FCD1943362B00A3055B /* InfoPlist.strings */,
@@ -230,13 +230,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4CCA8FEC1943362B00A3055B /* BodyShotsTests */ = {
+		4CCA8FEC1943362B00A3055B /* PocketShotsTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CCA8FF21943362B00A3055B /* BodyShotsTests.m */,
+				4CCA8FF21943362B00A3055B /* PocketShotsTests.m */,
 				4CCA8FED1943362B00A3055B /* Supporting Files */,
 			);
-			path = BodyShotsTests;
+			path = PocketShotsTests;
 			sourceTree = "<group>";
 		};
 		4CCA8FED1943362B00A3055B /* Supporting Files */ = {
@@ -290,7 +290,7 @@
 			dependencies = (
 			);
 			name = PocketShots;
-			productName = BodyShots;
+			productName = PocketShots;
 			productReference = 4CCA8FC11943362A00A3055B /* PocketShots.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -308,7 +308,7 @@
 				4CCA8FEB1943362B00A3055B /* PBXTargetDependency */,
 			);
 			name = PocketShotsTests;
-			productName = BodyShotsTests;
+			productName = PocketShotsTests;
 			productReference = 4CCA8FE51943362B00A3055B /* PocketShotsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -407,7 +407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-BodyShots-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-PocketShots-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -437,7 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CCA8FF31943362B00A3055B /* BodyShotsTests.m in Sources */,
+				4CCA8FF31943362B00A3055B /* PocketShotsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +561,7 @@
 		};
 		4CCA8FF71943362B00A3055B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD7C404E9BD74F1091FE0EE0 /* Pods-BodyShots.xcconfig */;
+			baseConfigurationReference = BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -569,8 +569,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BodyShots/PocketShots-Prefix.pch";
-				INFOPLIST_FILE = "BodyShots/PocketShots-Info.plist";
+				GCC_PREFIX_HEADER = "PocketShots/PocketShots-Prefix.pch";
+				INFOPLIST_FILE = "PocketShots/PocketShots-Info.plist";
 				PRODUCT_NAME = PocketShots;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -580,7 +580,7 @@
 		};
 		4CCA8FF81943362B00A3055B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD7C404E9BD74F1091FE0EE0 /* Pods-BodyShots.xcconfig */;
+			baseConfigurationReference = BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -588,8 +588,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BodyShots/PocketShots-Prefix.pch";
-				INFOPLIST_FILE = "BodyShots/PocketShots-Info.plist";
+				GCC_PREFIX_HEADER = "PocketShots/PocketShots-Prefix.pch";
+				INFOPLIST_FILE = "PocketShots/PocketShots-Info.plist";
 				PRODUCT_NAME = PocketShots;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -600,19 +600,19 @@
 		4CCA8FFA1943362B00A3055B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BodyShots.app/BodyShots";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketShots.app/PocketShots";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BodyShots/BodyShots-Prefix.pch";
+				GCC_PREFIX_HEADER = "PocketShots/PocketShots-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "BodyShotsTests/PocketShotsTests-Info.plist";
+				INFOPLIST_FILE = "PocketShotsTests/PocketShotsTests-Info.plist";
 				PRODUCT_NAME = PocketShotsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -622,15 +622,15 @@
 		4CCA8FFB1943362B00A3055B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BodyShots.app/BodyShots";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketShots.app/PocketShots";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BodyShots/BodyShots-Prefix.pch";
-				INFOPLIST_FILE = "BodyShotsTests/PocketShotsTests-Info.plist";
+				GCC_PREFIX_HEADER = "PocketShots/PocketShots-Prefix.pch";
+				INFOPLIST_FILE = "PocketShotsTests/PocketShotsTests-Info.plist";
 				PRODUCT_NAME = PocketShotsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

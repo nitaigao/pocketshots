@@ -2,4 +2,4 @@
 #import <UIKit/UIKit.h>
 #endif
 
-#import "Pods-BodyShots-environment.h"
+#import "Pods-PocketShots-environment.h"

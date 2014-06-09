@@ -1,6 +1,6 @@
 //
-//  BodyShotsTests.m
-//  BodyShotsTests
+//  PocketShotsTests.m
+//  PocketShotsTests
 //
 //  Created by Nicholas Kostelnik on 07/06/2014.
 //  Copyright (c) 2014 Studio. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface BodyShotsTests : XCTestCase
+@interface PocketShotsTests : XCTestCase
 
 @end
 
-@implementation BodyShotsTests
+@implementation PocketShotsTests
 
 - (void)setUp
 {

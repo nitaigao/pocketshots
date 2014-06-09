@@ -1,1 +1,0 @@
-../../QBImagePickerController/QBImagePickerController/QBImagePickerThumbnailView.h

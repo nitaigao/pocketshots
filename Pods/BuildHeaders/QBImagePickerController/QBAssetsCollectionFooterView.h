@@ -1,1 +1,0 @@
-../../QBImagePickerController/QBImagePickerController/QBAssetsCollectionFooterView.h

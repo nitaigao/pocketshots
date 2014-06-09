@@ -13,6 +13,7 @@
 		4C850D751944A1AA0005A492 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D741944A1AA0005A492 /* NSArray+Functional.m */; };
 		4C956BC919435F9200CA299D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C956BC819435F9200CA299D /* AssetsLibrary.framework */; };
 		4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C956BCB194368C600CA299D /* NewPhotoViewController.m */; };
+		4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA5D0F81946230B005136A4 /* GameKit.framework */; };
 		4CC6EA701944EA9F00582054 /* NoPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */; };
 		4CC6EA731945EB4500582054 /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CC6EA721945EB4500582054 /* wallpaper.jpg */; };
 		4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
@@ -58,25 +59,27 @@
 		4C956BC819435F9200CA299D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		4C956BCA194368C600CA299D /* NewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoViewController.h; sourceTree = "<group>"; };
 		4C956BCB194368C600CA299D /* NewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoViewController.m; sourceTree = "<group>"; };
+		4CA5D0F81946230B005136A4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		4CA5D0FA19462314005136A4 /* PocketShots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PocketShots.entitlements; sourceTree = "<group>"; };
 		4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPhotosViewController.h; sourceTree = "<group>"; };
 		4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPhotosViewController.m; sourceTree = "<group>"; };
 		4CC6EA721945EB4500582054 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wallpaper.jpg; path = ../../../../Desktop/wallpaper.jpg; sourceTree = "<group>"; };
-		4CCA8FC11943362A00A3055B /* BodyShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BodyShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCA8FC11943362A00A3055B /* PocketShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA8FC41943362B00A3055B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CCA8FC61943362B00A3055B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4CCA8FC81943362B00A3055B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4CCA8FCC1943362B00A3055B /* BodyShots-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BodyShots-Info.plist"; sourceTree = "<group>"; };
+		4CCA8FCC1943362B00A3055B /* PocketShots-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketShots-Info.plist"; sourceTree = "<group>"; };
 		4CCA8FCE1943362B00A3055B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CCA8FD01943362B00A3055B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4CCA8FD21943362B00A3055B /* BodyShots-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BodyShots-Prefix.pch"; sourceTree = "<group>"; };
+		4CCA8FD21943362B00A3055B /* PocketShots-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketShots-Prefix.pch"; sourceTree = "<group>"; };
 		4CCA8FD31943362B00A3055B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CCA8FD41943362B00A3055B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4CCA8FD71943362B00A3055B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		4CCA8FDA1943362B00A3055B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		4CCA8FDF1943362B00A3055B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4CCA8FE51943362B00A3055B /* BodyShotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodyShotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCA8FE51943362B00A3055B /* PocketShotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketShotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA8FE61943362B00A3055B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4CCA8FEE1943362B00A3055B /* BodyShotsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BodyShotsTests-Info.plist"; sourceTree = "<group>"; };
+		4CCA8FEE1943362B00A3055B /* PocketShotsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketShotsTests-Info.plist"; sourceTree = "<group>"; };
 		4CCA8FF01943362B00A3055B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CCA8FF21943362B00A3055B /* BodyShotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BodyShotsTests.m; sourceTree = "<group>"; };
 		4CCA8FFC1943375200A3055B /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 				4C956BC919435F9200CA299D /* AssetsLibrary.framework in Frameworks */,
 				4CCA8FC71943362B00A3055B /* CoreGraphics.framework in Frameworks */,
 				4CCA8FC91943362B00A3055B /* UIKit.framework in Frameworks */,
+				4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */,
 				4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */,
 				20B771C519864D7092D40871 /* libPods-BodyShots.a in Frameworks */,
 			);
@@ -163,6 +167,7 @@
 		4CCA8FB81943362A00A3055B = {
 			isa = PBXGroup;
 			children = (
+				4CA5D0FA19462314005136A4 /* PocketShots.entitlements */,
 				4CCA8FCA1943362B00A3055B /* BodyShots */,
 				4CCA8FEC1943362B00A3055B /* BodyShotsTests */,
 				4CCA8FC31943362A00A3055B /* Frameworks */,
@@ -174,8 +179,8 @@
 		4CCA8FC21943362A00A3055B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4CCA8FC11943362A00A3055B /* BodyShots.app */,
-				4CCA8FE51943362B00A3055B /* BodyShotsTests.xctest */,
+				4CCA8FC11943362A00A3055B /* PocketShots.app */,
+				4CCA8FE51943362B00A3055B /* PocketShotsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 		4CCA8FC31943362A00A3055B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CA5D0F81946230B005136A4 /* GameKit.framework */,
 				4C956BC819435F9200CA299D /* AssetsLibrary.framework */,
 				4CCA8FC41943362B00A3055B /* Foundation.framework */,
 				4CCA8FC61943362B00A3055B /* CoreGraphics.framework */,
@@ -216,10 +222,10 @@
 			isa = PBXGroup;
 			children = (
 				4CC6EA721945EB4500582054 /* wallpaper.jpg */,
-				4CCA8FCC1943362B00A3055B /* BodyShots-Info.plist */,
+				4CCA8FCC1943362B00A3055B /* PocketShots-Info.plist */,
 				4CCA8FCD1943362B00A3055B /* InfoPlist.strings */,
 				4CCA8FD01943362B00A3055B /* main.m */,
-				4CCA8FD21943362B00A3055B /* BodyShots-Prefix.pch */,
+				4CCA8FD21943362B00A3055B /* PocketShots-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -236,7 +242,7 @@
 		4CCA8FED1943362B00A3055B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4CCA8FEE1943362B00A3055B /* BodyShotsTests-Info.plist */,
+				4CCA8FEE1943362B00A3055B /* PocketShotsTests-Info.plist */,
 				4CCA8FEF1943362B00A3055B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -269,9 +275,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4CCA8FC01943362A00A3055B /* BodyShots */ = {
+		4CCA8FC01943362A00A3055B /* PocketShots */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CCA8FF61943362B00A3055B /* Build configuration list for PBXNativeTarget "BodyShots" */;
+			buildConfigurationList = 4CCA8FF61943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShots" */;
 			buildPhases = (
 				407AD44E3C1A4BD29D99C11F /* Check Pods Manifest.lock */,
 				4CCA8FBD1943362A00A3055B /* Sources */,
@@ -283,14 +289,14 @@
 			);
 			dependencies = (
 			);
-			name = BodyShots;
+			name = PocketShots;
 			productName = BodyShots;
-			productReference = 4CCA8FC11943362A00A3055B /* BodyShots.app */;
+			productReference = 4CCA8FC11943362A00A3055B /* PocketShots.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4CCA8FE41943362B00A3055B /* BodyShotsTests */ = {
+		4CCA8FE41943362B00A3055B /* PocketShotsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "BodyShotsTests" */;
+			buildConfigurationList = 4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShotsTests" */;
 			buildPhases = (
 				4CCA8FE11943362B00A3055B /* Sources */,
 				4CCA8FE21943362B00A3055B /* Frameworks */,
@@ -301,9 +307,9 @@
 			dependencies = (
 				4CCA8FEB1943362B00A3055B /* PBXTargetDependency */,
 			);
-			name = BodyShotsTests;
+			name = PocketShotsTests;
 			productName = BodyShotsTests;
-			productReference = 4CCA8FE51943362B00A3055B /* BodyShotsTests.xctest */;
+			productReference = 4CCA8FE51943362B00A3055B /* PocketShotsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -315,12 +321,23 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Studio;
 				TargetAttributes = {
+					4CCA8FC01943362A00A3055B = {
+						DevelopmentTeam = QQ6H83VL9N;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					4CCA8FE41943362B00A3055B = {
 						TestTargetID = 4CCA8FC01943362A00A3055B;
 					};
 				};
 			};
-			buildConfigurationList = 4CCA8FBC1943362A00A3055B /* Build configuration list for PBXProject "BodyShots" */;
+			buildConfigurationList = 4CCA8FBC1943362A00A3055B /* Build configuration list for PBXProject "PocketShots" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -333,8 +350,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4CCA8FC01943362A00A3055B /* BodyShots */,
-				4CCA8FE41943362B00A3055B /* BodyShotsTests */,
+				4CCA8FC01943362A00A3055B /* PocketShots */,
+				4CCA8FE41943362B00A3055B /* PocketShotsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -429,7 +446,7 @@
 /* Begin PBXTargetDependency section */
 		4CCA8FEB1943362B00A3055B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4CCA8FC01943362A00A3055B /* BodyShots */;
+			target = 4CCA8FC01943362A00A3055B /* PocketShots */;
 			targetProxy = 4CCA8FEA1943362B00A3055B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -548,10 +565,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = PocketShots.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BodyShots/BodyShots-Prefix.pch";
-				INFOPLIST_FILE = "BodyShots/BodyShots-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "BodyShots/PocketShots-Prefix.pch";
+				INFOPLIST_FILE = "BodyShots/PocketShots-Info.plist";
+				PRODUCT_NAME = PocketShots;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -562,10 +584,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = PocketShots.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BodyShots/BodyShots-Prefix.pch";
-				INFOPLIST_FILE = "BodyShots/BodyShots-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "BodyShots/PocketShots-Prefix.pch";
+				INFOPLIST_FILE = "BodyShots/PocketShots-Info.plist";
+				PRODUCT_NAME = PocketShots;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -585,8 +612,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "BodyShotsTests/BodyShotsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "BodyShotsTests/PocketShotsTests-Info.plist";
+				PRODUCT_NAME = PocketShotsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -603,8 +630,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BodyShots/BodyShots-Prefix.pch";
-				INFOPLIST_FILE = "BodyShotsTests/BodyShotsTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "BodyShotsTests/PocketShotsTests-Info.plist";
+				PRODUCT_NAME = PocketShotsTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -613,7 +640,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4CCA8FBC1943362A00A3055B /* Build configuration list for PBXProject "BodyShots" */ = {
+		4CCA8FBC1943362A00A3055B /* Build configuration list for PBXProject "PocketShots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CCA8FF41943362B00A3055B /* Debug */,
@@ -622,7 +649,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CCA8FF61943362B00A3055B /* Build configuration list for PBXNativeTarget "BodyShots" */ = {
+		4CCA8FF61943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CCA8FF71943362B00A3055B /* Debug */,
@@ -631,7 +658,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "BodyShotsTests" */ = {
+		4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShotsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CCA8FFA1943362B00A3055B /* Debug */,

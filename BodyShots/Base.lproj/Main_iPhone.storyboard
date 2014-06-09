@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vyi-pk-avX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A238x" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vyi-pk-avX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Photo View Controller-->
@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Tn1-Ph-5TT" kind="relationship" relationship="rootViewController" id="KsE-Bc-MVo"/>
+                        <segue destination="Tn1-Ph-5TT" kind="relationship" relationship="rootViewController" id="0K2-QH-cox"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="baE-4r-yhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,30 +297,6 @@
             </objects>
             <point key="canvasLocation" x="-26" y="-319"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="psH-Cs-J9n">
-            <objects>
-                <viewController id="Fzq-Rl-eFy" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KN5-Dp-nYY"/>
-                        <viewControllerLayoutGuide type="bottom" id="JUR-Cm-XCh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8Ft-kz-ODC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x8I-MC-6II">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="iRi-P2-lgW"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OpU-Uy-6fU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-660" y="739"/>
-        </scene>
         <!--Timeline View Controller-->
         <scene sceneID="4ko-lT-w2P">
             <objects>
@@ -350,9 +326,6 @@
             <point key="canvasLocation" x="-660" y="106"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="wallpaper.jpg" width="640" height="1136"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

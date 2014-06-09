@@ -41,8 +41,14 @@
     [controllers addObject:noPhotosController];
   }
   else {
-    PhotoViewController* previousViewController = [controllers objectAtIndex:viewController.index - 1];
-    [self setViewControllers:@[previousViewController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+    if (viewController.index == 0) {
+      PhotoViewController* previousViewController = [controllers objectAtIndex:0];
+      [self setViewControllers:@[previousViewController] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    }
+    else {
+      PhotoViewController* previousViewController = [controllers objectAtIndex:viewController.index - 1];
+      [self setViewControllers:@[previousViewController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+    }
   }
   
   for (NSInteger i = 0; i < controllers.count; i++) {

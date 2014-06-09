@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+@class ALAssetsLibrary;
+
 @interface PhotoAlbum : NSObject
 
 + (NSInteger)photoCount;
@@ -9,8 +11,6 @@
 + (void)savePhoto:(UIImage*)photo;
 
 + (void)deletePhoto:(NSString*)photoPath;
-
-+ (void)importPhoto:(NSURL*)photoURL complete:(void (^)())complete index:(NSInteger)index;
 
 + (void)importPhotos:(NSArray*)photoURLs progress:(void(^)(float))progress complete:(void(^)())complete;
 

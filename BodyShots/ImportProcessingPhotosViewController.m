@@ -38,6 +38,7 @@
 
 - (void)processPhotos:(NSArray*)photos {
   [PhotoAlbum importPhotos:photosToProcess progress:^(float progress) {
+    NSLog(@"%f", progress);
     [self performSelectorOnMainThread:@selector(updateProgress:) withObject:[NSNumber numberWithFloat:progress] waitUntilDone:YES];
   } complete:^{
     [self performSelectorOnMainThread:@selector(updateProgress:) withObject:[NSNumber numberWithFloat:1.0f] waitUntilDone:YES];

@@ -44,21 +44,6 @@
   return self.photos.count;
 }
 
-+ (void)importPhoto:(NSURL *)photoURL complete:(void (^)())complete index:(NSInteger)index {
-  ALAssetsLibrary* assetLibrary = [[ALAssetsLibrary alloc] init];
-  [assetLibrary assetForURL:photoURL resultBlock:^(ALAsset *asset) {
-
-    CFURLRef url = (__bridge CFURLRef)[NSURL fileURLWithPath:[self uniquePhotoPath]];
-    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, kUTTypeJPEG, 1, NULL);
-    CGImageDestinationAddImage(destination, asset.defaultRepresentation.fullResolutionImage, nil);
-    CGImageDestinationFinalize(destination);
-    
-    complete();
-  } failureBlock:^(NSError *error) {
-    NSLog(@"%@", error);
-  }];
-}
-
 + (void)purgeAlbum {
   for (NSString* photoPath in [self photos]) {
     [[NSFileManager defaultManager] removeItemAtPath:photoPath error:nil];
@@ -101,15 +86,33 @@
   [[NSFileManager defaultManager] removeItemAtPath:photoPath error:nil];
 }
 
-+ (void)importPhotos:(NSArray *)photoURLs progress:(void(^)(float percent))progress complete:(void(^)())complete {
-  [photoURLs each:^(id url, NSInteger index, NSInteger total) {
-    progress((float)index + 1 / (float)total);
-    [PhotoAlbum importPhoto:url complete:^{
-        if (index + 1 >= total) {
-          complete();
-        }
-      } index:index];
++ (void)importPhotosRecursive:(NSArray*)photosURLs index:(NSInteger)index progress:(void(^)(float percent))progress complete:(void(^)())complete {
+  progress((index + 1) / (float)photosURLs.count);
+  
+  // Exit
+  if (index + 1 == photosURLs.count) {
+    complete();
+    return;
+  }
+  
+  //Work
+  ALAssetsLibrary* assetLibrary = [[ALAssetsLibrary alloc] init];
+  NSURL* photoURL = [photosURLs objectAtIndex:index];
+  [assetLibrary assetForURL:photoURL resultBlock:^(ALAsset *asset) {
+    CFURLRef url = (__bridge CFURLRef)[NSURL fileURLWithPath:[self uniquePhotoPath]];
+    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, kUTTypeJPEG, 1, NULL);
+    CGImageDestinationAddImage(destination, asset.defaultRepresentation.fullResolutionImage, nil);
+    CGImageDestinationFinalize(destination);
+
+    // Next
+    [self importPhotosRecursive:photosURLs index:index + 1 progress:progress complete:complete];
+  } failureBlock:^(NSError *error) {
+    NSLog(@"%@", error);
   }];
+}
+
++ (void)importPhotos:(NSArray *)photoURLs progress:(void(^)(float percent))progress complete:(void(^)())complete {
+  [self importPhotosRecursive:photoURLs index:0 progress:progress complete:complete];
 }
 
 @end

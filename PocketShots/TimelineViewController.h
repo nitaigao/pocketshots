@@ -1,7 +1,13 @@
 #import <UIKit/UIKit.h>
 
-@interface TimelineViewController : UIPageViewController<UIPageViewControllerDataSource> {
-  NSMutableArray* controllers;
+#import "UICollectionView+EmptyState.h"
+
+#import "PhotoAlbum.h"
+
+@interface TimelineViewController : UIViewController<UICollectionViewDataSource, UICollectionViewEmptyStateDelegate> {
+  PhotoAlbum* photoAlbum;
 }
+
+@property (nonatomic, retain) IBOutlet UICollectionView* photosCollectionView;
 
 @end

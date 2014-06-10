@@ -8,14 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		20B771C519864D7092D40871 /* libPods-PocketShots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */; };
+		4C322FB31947A2CA00361E44 /* NSDate+DateFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB21947A2CA00361E44 /* NSDate+DateFromString.m */; };
+		4C322FB61947A3D500361E44 /* NSFileManager+Filename.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB51947A3D500361E44 /* NSFileManager+Filename.m */; };
+		4C322FB91947A4B600361E44 /* NSBundle+Documents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB81947A4B600361E44 /* NSBundle+Documents.m */; };
+		4C322FBB1947A99700361E44 /* NSDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FBA1947A99700361E44 /* NSDateTests.m */; };
+		4C322FBD1947AF7600361E44 /* PhotoAlbumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FBC1947AF7600361E44 /* PhotoAlbumTests.m */; };
+		4C322FC01947B53300361E44 /* Exif.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FBF1947B53300361E44 /* Exif.m */; };
+		4C322FC21947B7E200361E44 /* ExifTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FC11947B7E200361E44 /* ExifTests.m */; };
 		4C850D6E194496010005A492 /* FinishSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D6D194496010005A492 /* FinishSetupViewController.m */; };
 		4C850D71194498520005A492 /* ImportFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D70194498520005A492 /* ImportFinishedViewController.m */; };
 		4C850D751944A1AA0005A492 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D741944A1AA0005A492 /* NSArray+Functional.m */; };
+		4C8EF01819463F35004EE7BA /* TimelineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EF01719463F35004EE7BA /* TimelineCollectionViewCell.m */; };
 		4C956BC919435F9200CA299D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C956BC819435F9200CA299D /* AssetsLibrary.framework */; };
 		4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C956BCB194368C600CA299D /* NewPhotoViewController.m */; };
 		4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA5D0F81946230B005136A4 /* GameKit.framework */; };
 		4CC6EA701944EA9F00582054 /* NoPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */; };
-		4CC6EA731945EB4500582054 /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CC6EA721945EB4500582054 /* wallpaper.jpg */; };
 		4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
 		4CCA8FC71943362B00A3055B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC61943362B00A3055B /* CoreGraphics.framework */; };
 		4CCA8FC91943362B00A3055B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC81943362B00A3055B /* UIKit.framework */; };
@@ -29,13 +36,14 @@
 		4CCA8FE81943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
 		4CCA8FE91943362B00A3055B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC81943362B00A3055B /* UIKit.framework */; };
 		4CCA8FF11943362B00A3055B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA8FEF1943362B00A3055B /* InfoPlist.strings */; };
-		4CCA8FF31943362B00A3055B /* PocketShotsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA8FF21943362B00A3055B /* PocketShotsTests.m */; };
 		4CCA8FFE1943375200A3055B /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA8FFD1943375200A3055B /* TimelineViewController.m */; };
 		4CCA90011943387500A3055B /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90001943387500A3055B /* PhotoAlbum.m */; };
 		4CCA90041943398E00A3055B /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90031943398E00A3055B /* PhotoViewController.m */; };
 		4CCA90071943532600A3055B /* ImportSelectPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90061943532600A3055B /* ImportSelectPhotosViewController.m */; };
+		4CD93D881947C4C300CFA1CB /* TestJpg.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD93D871947C4C300CFA1CB /* TestJpg.m */; };
 		4CE058A119448AAB007D01CB /* SetupImportPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE058A019448AAB007D01CB /* SetupImportPhotosViewController.m */; };
 		4CF42D7019448F7D00F00C4E /* ImportProcessingPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF42D6F19448F7D00F00C4E /* ImportProcessingPhotosViewController.m */; };
+		4E7AC8534079445E94243DFB /* libPods-PocketShotsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB173D754BA14A2BB92B323B /* libPods-PocketShotsTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,12 +58,25 @@
 
 /* Begin PBXFileReference section */
 		4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketShots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C322FB11947A2CA00361E44 /* NSDate+DateFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFromString.h"; sourceTree = "<group>"; };
+		4C322FB21947A2CA00361E44 /* NSDate+DateFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFromString.m"; sourceTree = "<group>"; };
+		4C322FB41947A3D500361E44 /* NSFileManager+Filename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Filename.h"; sourceTree = "<group>"; };
+		4C322FB51947A3D500361E44 /* NSFileManager+Filename.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Filename.m"; sourceTree = "<group>"; };
+		4C322FB71947A4B600361E44 /* NSBundle+Documents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Documents.h"; sourceTree = "<group>"; };
+		4C322FB81947A4B600361E44 /* NSBundle+Documents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Documents.m"; sourceTree = "<group>"; };
+		4C322FBA1947A99700361E44 /* NSDateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateTests.m; sourceTree = "<group>"; };
+		4C322FBC1947AF7600361E44 /* PhotoAlbumTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumTests.m; sourceTree = "<group>"; };
+		4C322FBE1947B53300361E44 /* Exif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exif.h; sourceTree = "<group>"; };
+		4C322FBF1947B53300361E44 /* Exif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exif.m; sourceTree = "<group>"; };
+		4C322FC11947B7E200361E44 /* ExifTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExifTests.m; sourceTree = "<group>"; };
 		4C850D6C194496010005A492 /* FinishSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishSetupViewController.h; sourceTree = "<group>"; };
 		4C850D6D194496010005A492 /* FinishSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishSetupViewController.m; sourceTree = "<group>"; };
 		4C850D6F194498520005A492 /* ImportFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportFinishedViewController.h; sourceTree = "<group>"; };
 		4C850D70194498520005A492 /* ImportFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportFinishedViewController.m; sourceTree = "<group>"; };
 		4C850D731944A1AA0005A492 /* NSArray+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Functional.h"; sourceTree = "<group>"; };
 		4C850D741944A1AA0005A492 /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
+		4C8EF01619463F35004EE7BA /* TimelineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineCollectionViewCell.h; sourceTree = "<group>"; };
+		4C8EF01719463F35004EE7BA /* TimelineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineCollectionViewCell.m; sourceTree = "<group>"; };
 		4C956BC819435F9200CA299D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		4C956BCA194368C600CA299D /* NewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoViewController.h; sourceTree = "<group>"; };
 		4C956BCB194368C600CA299D /* NewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoViewController.m; sourceTree = "<group>"; };
@@ -63,7 +84,6 @@
 		4CA5D0FA19462314005136A4 /* PocketShots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PocketShots.entitlements; sourceTree = SOURCE_ROOT; };
 		4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPhotosViewController.h; sourceTree = "<group>"; };
 		4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPhotosViewController.m; sourceTree = "<group>"; };
-		4CC6EA721945EB4500582054 /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wallpaper.jpg; path = ../../../../Desktop/wallpaper.jpg; sourceTree = "<group>"; };
 		4CCA8FC11943362A00A3055B /* PocketShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA8FC41943362B00A3055B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CCA8FC61943362B00A3055B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,7 +101,6 @@
 		4CCA8FE61943362B00A3055B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4CCA8FEE1943362B00A3055B /* PocketShotsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketShotsTests-Info.plist"; sourceTree = "<group>"; };
 		4CCA8FF01943362B00A3055B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4CCA8FF21943362B00A3055B /* PocketShotsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PocketShotsTests.m; sourceTree = "<group>"; };
 		4CCA8FFC1943375200A3055B /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		4CCA8FFD1943375200A3055B /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		4CCA8FFF1943387500A3055B /* PhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoAlbum.h; sourceTree = "<group>"; };
@@ -90,11 +109,15 @@
 		4CCA90031943398E00A3055B /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		4CCA90051943532600A3055B /* ImportSelectPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportSelectPhotosViewController.h; sourceTree = "<group>"; };
 		4CCA90061943532600A3055B /* ImportSelectPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportSelectPhotosViewController.m; sourceTree = "<group>"; };
+		4CD93D861947C4C300CFA1CB /* TestJpg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestJpg.h; sourceTree = "<group>"; };
+		4CD93D871947C4C300CFA1CB /* TestJpg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestJpg.m; sourceTree = "<group>"; };
 		4CE0589F19448AAB007D01CB /* SetupImportPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupImportPhotosViewController.h; sourceTree = "<group>"; };
 		4CE058A019448AAB007D01CB /* SetupImportPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupImportPhotosViewController.m; sourceTree = "<group>"; };
 		4CF42D6E19448F7D00F00C4E /* ImportProcessingPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportProcessingPhotosViewController.h; sourceTree = "<group>"; };
 		4CF42D6F19448F7D00F00C4E /* ImportProcessingPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportProcessingPhotosViewController.m; sourceTree = "<group>"; };
+		5E6590AEA99C4B2DAC17F5F2 /* Pods-PocketShotsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketShotsTests.xcconfig"; path = "Pods/Pods-PocketShotsTests.xcconfig"; sourceTree = "<group>"; };
 		BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketShots.xcconfig"; path = "Pods/Pods-PocketShots.xcconfig"; sourceTree = "<group>"; };
+		EB173D754BA14A2BB92B323B /* libPods-PocketShotsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketShotsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +141,7 @@
 				4CCA8FE71943362B00A3055B /* XCTest.framework in Frameworks */,
 				4CCA8FE91943362B00A3055B /* UIKit.framework in Frameworks */,
 				4CCA8FE81943362B00A3055B /* Foundation.framework in Frameworks */,
+				4E7AC8534079445E94243DFB /* libPods-PocketShotsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +162,25 @@
 			children = (
 				4C850D731944A1AA0005A492 /* NSArray+Functional.h */,
 				4C850D741944A1AA0005A492 /* NSArray+Functional.m */,
+				4C322FB11947A2CA00361E44 /* NSDate+DateFromString.h */,
+				4C322FB21947A2CA00361E44 /* NSDate+DateFromString.m */,
+				4C322FB41947A3D500361E44 /* NSFileManager+Filename.h */,
+				4C322FB51947A3D500361E44 /* NSFileManager+Filename.m */,
+				4C322FB71947A4B600361E44 /* NSBundle+Documents.h */,
+				4C322FB81947A4B600361E44 /* NSBundle+Documents.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4C8EF01519463AF2004EE7BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CCA8FFF1943387500A3055B /* PhotoAlbum.h */,
+				4CCA90001943387500A3055B /* PhotoAlbum.m */,
+				4C322FBE1947B53300361E44 /* Exif.h */,
+				4C322FBF1947B53300361E44 /* Exif.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		4CC6EA6D1944EA9100582054 /* Timeline */ = {
@@ -151,6 +192,8 @@
 				4CCA90031943398E00A3055B /* PhotoViewController.m */,
 				4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */,
 				4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */,
+				4C8EF01619463F35004EE7BA /* TimelineCollectionViewCell.h */,
+				4C8EF01719463F35004EE7BA /* TimelineCollectionViewCell.m */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -172,6 +215,7 @@
 				4CCA8FC31943362A00A3055B /* Frameworks */,
 				4CCA8FC21943362A00A3055B /* Products */,
 				BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */,
+				5E6590AEA99C4B2DAC17F5F2 /* Pods-PocketShotsTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +238,7 @@
 				4CCA8FC81943362B00A3055B /* UIKit.framework */,
 				4CCA8FE61943362B00A3055B /* XCTest.framework */,
 				4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */,
+				EB173D754BA14A2BB92B323B /* libPods-PocketShotsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,6 +246,7 @@
 		4CCA8FCA1943362B00A3055B /* PocketShots */ = {
 			isa = PBXGroup;
 			children = (
+				4C8EF01519463AF2004EE7BA /* Model */,
 				4CC6EA711944F2C600582054 /* New Photo */,
 				4CC6EA6D1944EA9100582054 /* Timeline */,
 				4C850D721944A1990005A492 /* Extensions */,
@@ -211,8 +257,6 @@
 				4CCA8FD91943362B00A3055B /* Main_iPad.storyboard */,
 				4CCA8FDF1943362B00A3055B /* Images.xcassets */,
 				4CCA8FCB1943362B00A3055B /* Supporting Files */,
-				4CCA8FFF1943387500A3055B /* PhotoAlbum.h */,
-				4CCA90001943387500A3055B /* PhotoAlbum.m */,
 			);
 			path = PocketShots;
 			sourceTree = "<group>";
@@ -221,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				4CA5D0FA19462314005136A4 /* PocketShots.entitlements */,
-				4CC6EA721945EB4500582054 /* wallpaper.jpg */,
 				4CCA8FCC1943362B00A3055B /* PocketShots-Info.plist */,
 				4CCA8FCD1943362B00A3055B /* InfoPlist.strings */,
 				4CCA8FD01943362B00A3055B /* main.m */,
@@ -233,8 +276,12 @@
 		4CCA8FEC1943362B00A3055B /* PocketShotsTests */ = {
 			isa = PBXGroup;
 			children = (
-				4CCA8FF21943362B00A3055B /* PocketShotsTests.m */,
 				4CCA8FED1943362B00A3055B /* Supporting Files */,
+				4C322FBA1947A99700361E44 /* NSDateTests.m */,
+				4C322FBC1947AF7600361E44 /* PhotoAlbumTests.m */,
+				4C322FC11947B7E200361E44 /* ExifTests.m */,
+				4CD93D861947C4C300CFA1CB /* TestJpg.h */,
+				4CD93D871947C4C300CFA1CB /* TestJpg.m */,
 			);
 			path = PocketShotsTests;
 			sourceTree = "<group>";
@@ -298,9 +345,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShotsTests" */;
 			buildPhases = (
+				F803DA8211A3460CB14C96A6 /* Check Pods Manifest.lock */,
 				4CCA8FE11943362B00A3055B /* Sources */,
 				4CCA8FE21943362B00A3055B /* Frameworks */,
 				4CCA8FE31943362B00A3055B /* Resources */,
+				D4074D9E3EC9455ABAF9D103 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,7 +414,6 @@
 				4CCA8FE01943362B00A3055B /* Images.xcassets in Resources */,
 				4CCA8FD81943362B00A3055B /* Main_iPhone.storyboard in Resources */,
 				4CCA8FCF1943362B00A3055B /* InfoPlist.strings in Resources */,
-				4CC6EA731945EB4500582054 /* wallpaper.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +458,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-PocketShots-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D4074D9E3EC9455ABAF9D103 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PocketShotsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F803DA8211A3460CB14C96A6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -425,11 +503,16 @@
 				4CCA90071943532600A3055B /* ImportSelectPhotosViewController.m in Sources */,
 				4C850D751944A1AA0005A492 /* NSArray+Functional.m in Sources */,
 				4CE058A119448AAB007D01CB /* SetupImportPhotosViewController.m in Sources */,
+				4C322FB31947A2CA00361E44 /* NSDate+DateFromString.m in Sources */,
+				4C322FC01947B53300361E44 /* Exif.m in Sources */,
 				4C850D71194498520005A492 /* ImportFinishedViewController.m in Sources */,
+				4C322FB91947A4B600361E44 /* NSBundle+Documents.m in Sources */,
 				4CF42D7019448F7D00F00C4E /* ImportProcessingPhotosViewController.m in Sources */,
+				4C322FB61947A3D500361E44 /* NSFileManager+Filename.m in Sources */,
 				4CCA90041943398E00A3055B /* PhotoViewController.m in Sources */,
 				4CCA8FD51943362B00A3055B /* AppDelegate.m in Sources */,
 				4CCA8FD11943362B00A3055B /* main.m in Sources */,
+				4C8EF01819463F35004EE7BA /* TimelineCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +520,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CCA8FF31943362B00A3055B /* PocketShotsTests.m in Sources */,
+				4C322FBD1947AF7600361E44 /* PhotoAlbumTests.m in Sources */,
+				4CD93D881947C4C300CFA1CB /* TestJpg.m in Sources */,
+				4C322FC21947B7E200361E44 /* ExifTests.m in Sources */,
+				4C322FBB1947A99700361E44 /* NSDateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +685,7 @@
 		};
 		4CCA8FFA1943362B00A3055B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E6590AEA99C4B2DAC17F5F2 /* Pods-PocketShotsTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketShots.app/PocketShots";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -621,6 +708,7 @@
 		};
 		4CCA8FFB1943362B00A3055B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E6590AEA99C4B2DAC17F5F2 /* Pods-PocketShotsTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketShots.app/PocketShots";
 				FRAMEWORK_SEARCH_PATHS = (

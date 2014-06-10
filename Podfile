@@ -3,9 +3,11 @@
 
 target "PocketShots" do
 	pod 'QBImagePickerController'
+	pod 'UICollectionViewEmptyState'
+	pod 'Functional.m'
 end
 
 target "PocketShotsTests" do
-
+	pod 'UIImage+Dummy', '~> 0.0.2'
 end
 

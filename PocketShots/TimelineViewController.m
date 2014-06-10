@@ -2,9 +2,11 @@
 
 #import "PhotoAlbum.h"
 
+#import "TimelineCollectionViewCell.h"
+
 #import "PhotoViewController.h"
-#import "ImportSelectPhotosViewController.h"
-#import <QBImagePickerController/QBImagePickerController.h>
+
+#import "NSBundle+Documents.h"
 
 @interface TimelineViewController ()
 
@@ -12,103 +14,55 @@
 
 @implementation TimelineViewController
 
-- (instancetype)initWithCoder:(NSCoder *)coder {
+@synthesize photosCollectionView;
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
   self = [super initWithCoder:coder];
   if (self) {
-    controllers = [[NSMutableArray alloc] init];
+    photoAlbum = [[PhotoAlbum alloc] initWithDirectory:[NSBundle mainBundle].documentsPath];
   }
   return self;
 }
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+  return photoAlbum.photoCount;
+}
 
 - (void)viewDidLoad {
-  self.dataSource = self;
-  self.automaticallyAdjustsScrollViewInsets = NO;
-}
+  UIViewController* emptyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EmptyViewController"];
+  [self addChildViewController:emptyViewController];
+  photosCollectionView.emptyState_view = emptyViewController.view;
 
-- (IBAction)newPhoto:(id)sender {
-  [self performSegueWithIdentifier:@"photo" sender:self];
-}
-
-- (IBAction)trashPhoto:(id)sender {
-  PhotoViewController* viewController = self.viewControllers.firstObject;
-  [viewController purge];
-  
-  [controllers removeObjectAtIndex:viewController.index];
-  
-  if (controllers.count <= 0) {
-    UIViewController* noPhotosController = [self.storyboard instantiateViewControllerWithIdentifier:@"NoPhotos"];
-    [self setViewControllers:@[noPhotosController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-    [controllers addObject:noPhotosController];
-  }
-  else {
-    if (viewController.index == 0) {
-      PhotoViewController* previousViewController = [controllers objectAtIndex:0];
-      [self setViewControllers:@[previousViewController] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
-    }
-    else {
-      PhotoViewController* previousViewController = [controllers objectAtIndex:viewController.index - 1];
-      [self setViewControllers:@[previousViewController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-    }
-  }
-  
-  for (NSInteger i = 0; i < controllers.count; i++) {
-    PhotoViewController* controller = [controllers objectAtIndex:i];
-    controller.index = i;
-  }
+  [self.navigationController.toolbar setBackgroundImage:[UIImage new]
+                forToolbarPosition:UIBarPositionAny
+                        barMetrics:UIBarMetricsDefault];
+ 
+  [self.navigationController.toolbar setShadowImage:[UIImage new]
+            forToolbarPosition:UIToolbarPositionAny];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-  
-  [self.navigationController setToolbarHidden:YES animated:NO];
-  [controllers removeAllObjects];
-  
-  [PhotoAlbum iterateImages:^(NSString* photoPath, NSDate* creationDate, NSInteger photoIndex, NSInteger totalPhotos) {
-    
-    PhotoViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PhotoViewController"];
-    viewController.photoPath = photoPath;
-    viewController.creationDate = creationDate;
-    [controllers addObject:viewController];
-    
-    if (photoIndex + 1 >= totalPhotos) {
-      [controllers sortUsingComparator:^NSComparisonResult(PhotoViewController* a, PhotoViewController* b) {
-        return [a.creationDate compare:b.creationDate];
-      }];
-      
-      for (NSInteger i = 0; i < totalPhotos; i++) {
-        PhotoViewController* controller = [controllers objectAtIndex:i];
-        controller.index = i;
-        
-        if (i + 1 == totalPhotos) {
-          [self setViewControllers:@[controller] direction:UIPageViewControllerNavigationDirectionReverse animated:false completion:nil];
-        }
-      }
-    }
-  }];
-  
-  if (controllers.count <= 0) {
-    UIViewController* noPhotosController = [self.storyboard instantiateViewControllerWithIdentifier:@"NoPhotos"];
-    [self setViewControllers:@[noPhotosController] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-    [controllers addObject:noPhotosController];
-  }
+  [photoAlbum loadPhotos];
+  [photosCollectionView reloadData];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(PhotoViewController *)viewController {
-  if (viewController.index - 1 < 0) {
-    return nil;
-  }
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  TimelineCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectonViewCell" forIndexPath:indexPath];
   
-  UIViewController* previousController = [controllers objectAtIndex:viewController.index - 1];
-  return previousController;
+  NSString* photoPath = [photoAlbum photoAtIndex:indexPath.row];
+  cell.photo.image = [UIImage imageWithContentsOfFile:photoPath];
+  cell.photoPath = photoPath;
+  
+  return cell;
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(PhotoViewController *)viewController {
-  if (viewController.index + 1 >= controllers.count) {
-    return nil;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  BOOL isDetailSegue = [segue.identifier isEqualToString:@"detail"];
+  if (isDetailSegue) {
+    TimelineCollectionViewCell* timeLineCollectionViewCell = sender;
+    PhotoViewController* photoViewController = segue.destinationViewController;
+    [photoViewController setPhotoPath:timeLineCollectionViewCell.photoPath];
   }
-  
-  UIViewController* nextController = [controllers objectAtIndex:viewController.index + 1];
-  return nextController;
 }
-
 
 @end

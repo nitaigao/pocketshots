@@ -2,18 +2,29 @@
 
 @class ALAssetsLibrary;
 
-@interface PhotoAlbum : NSObject
+@interface PhotoAlbum : NSObject {
+  NSString* directoryPath;
+  NSArray* photos;
+}
 
-+ (NSInteger)photoCount;
+- (instancetype)initWithDirectory:(NSString*)directoryPath;
 
-+ (void)purgeAlbum;
+// Context Specific
+
+- (void)loadPhotos;
+
+- (NSInteger)photoCount;
+
+- (NSString*)photoAtIndex:(NSInteger)index;
+
+- (void)purge;
+
+// Generic External
 
 + (void)savePhoto:(UIImage*)photo;
 
 + (void)deletePhoto:(NSString*)photoPath;
 
 + (void)importPhotos:(NSArray*)photoURLs progress:(void(^)(float))progress complete:(void(^)())complete;
-
-+ (void)iterateImages:(void (^)(NSString*, NSDate*, NSInteger, NSInteger))iterator;
 
 @end

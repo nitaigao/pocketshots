@@ -10,9 +10,9 @@
 
 - (void)viewDidLoad {
   UIImagePickerController* imagePickerController = [[UIImagePickerController alloc] init];
-#ifndef TARGET_IPHONE_SIMULATOR
+//#ifndef TARGET_IPHONE_SIMULATOR
   imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-#endif  
+//#endif  
   imagePickerController.delegate = self;
   [self addChildViewController:imagePickerController];
   [self.view addSubview:imagePickerController.view];

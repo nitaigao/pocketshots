@@ -1,10 +1,47 @@
 PODS:
+  - BlocksKit (2.2.2):
+    - BlocksKit/All
+  - BlocksKit/All (2.2.2):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.2)
+  - BlocksKit/DynamicDelegate (2.2.2)
+  - BlocksKit/MessageUI (2.2.2):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.2):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - Functional.m (1.0.0)
+  - JRSwizzle (1.0)
+  - libextobjc/EXTScope (0.4):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4)
+  - ObjcAssociatedObjectHelpers (1.2.1)
   - QBImagePickerController (2.1)
+  - UICollectionViewEmptyState (1.1.0):
+    - BlocksKit (= 2.2.2)
+    - JRSwizzle (= 1.0)
+    - libextobjc/EXTScope (= 0.4)
+    - ObjcAssociatedObjectHelpers (= 1.2.1)
+  - UIImage+Dummy (0.0.2)
 
 DEPENDENCIES:
+  - Functional.m
   - QBImagePickerController
+  - UICollectionViewEmptyState
+  - UIImage+Dummy (~> 0.0.2)
 
 SPEC CHECKSUMS:
+  BlocksKit: 49fda17cbd628f3d6683f62de57edeaa315b386c
+  Functional.m: e01ad5fc30324b63273af1f37284ac609192caa4
+  JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
+  libextobjc: ba42e4111f433273a886cd54f0ddaddb7f62f82f
+  ObjcAssociatedObjectHelpers: bbb9f597f62ab0d7b0c187f56bc887c9f7d0c8f0
   QBImagePickerController: c2273a11d55e7c308ac2f88625ef58bb56b5b7a4
+  UICollectionViewEmptyState: 379a5421ac12a8d37014f3640c1a0f2a72163dfb
+  UIImage+Dummy: d7b13f675eab7d9086b7b40fd4b5369abb8c62a0
 
 COCOAPODS: 0.32.1

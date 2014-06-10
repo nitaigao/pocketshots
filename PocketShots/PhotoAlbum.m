@@ -3,78 +3,71 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 #import "NSArray+Functional.h"
+#import "NSDate+DateFromString.h"
+#import <NSArray+F.h>
+#import "NSFileManager+Filename.h"
+#import "NSBundle+Documents.h"
 
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-
-@interface NSBundle(Documents)
-
-- (NSString *) documentsPath;
-
-@end
-
-@implementation NSBundle(Documents)
-
-- (NSString *) documentsPath {
-  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-  NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-  return basePath;
-}
-
-@end
+#import "Exif.h"
 
 @interface PhotoAlbum(Private)
-
-+ (NSArray*) photos;
 
 @end
 
 @implementation PhotoAlbum
 
-+ (void)iterateImages:(void (^)(NSString*, NSDate*, NSInteger, NSInteger))iterator {
-  [self.photos enumerateObjectsUsingBlock:^(NSString* filepath, NSUInteger idx, BOOL *stop) {
-    NSDictionary* attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:filepath error:nil];
-    NSDate* creationDate = [attrs objectForKey:NSFileCreationDate];
-    iterator(filepath, creationDate, idx, self.photos.count);
+- (instancetype)initWithDirectory:(NSString*)aDirectoryPath {
+  self = [super init];
+  if (self) {
+    photos = [NSArray array];
+    directoryPath = [NSString stringWithString:aDirectoryPath];
+  }
+  return self;
+}
+
+- (NSArray*)jpgFiles {
+  NSArray* directoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath error:nil];
+  NSPredicate* filter = [NSPredicate predicateWithFormat:@"self ENDSWITH '.JPG'"];
+  NSArray* jpgFiles = [directoryContents filteredArrayUsingPredicate:filter];
+  return jpgFiles;
+}
+
+- (void)loadPhotos {
+  NSArray* jpgFiles = [self jpgFiles];
+  
+  NSArray* photoPaths = [jpgFiles map:^id(NSString* filename) {
+    NSString* photoPath = [NSString stringWithFormat:@"%@/%@", [NSBundle mainBundle].documentsPath, filename];
+    return photoPath;
   }];
+
+  photos = [[[photoPaths sortedArrayUsingComparator:^NSComparisonResult(NSString* photoA, NSString* photoB) {
+    Exif* exifA = [[Exif alloc] initWithFile:photoA];
+    Exif* exifB = [[Exif alloc] initWithFile:photoB];
+    
+    NSComparisonResult comparisonResult = [exifA.digitizedDate compare:exifB.digitizedDate];
+    return comparisonResult;
+  }] reverseObjectEnumerator] allObjects];
 }
 
-+ (NSInteger)photoCount {
-  return self.photos.count;
+- (NSString*)photoAtIndex:(NSInteger)index {
+  return [photos objectAtIndex:index];
 }
 
-+ (void)purgeAlbum {
-  for (NSString* photoPath in [self photos]) {
+- (NSInteger)photoCount {
+  return photos.count;
+}
+
+- (void)purge {
+  for (NSString* photoPath in photos) {
     [[NSFileManager defaultManager] removeItemAtPath:photoPath error:nil];
   }
 }
 
-+ (NSArray*)photos {
-  NSArray* directoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[NSBundle mainBundle].documentsPath error:nil];
-  NSPredicate* filter = [NSPredicate predicateWithFormat:@"self ENDSWITH '.JPG'"];
-  NSArray* jpgFiles = [directoryContents filteredArrayUsingPredicate:filter];
-  NSMutableArray* photoPaths = [NSMutableArray array];
-  
-  for (NSString* filename in jpgFiles) {
-    NSString* photoPath = [NSString stringWithFormat:@"%@/%@", [NSBundle mainBundle].documentsPath, filename];
-    [photoPaths addObject:photoPath];
-  }
-  
-  return photoPaths;
-}
-
-+ (NSString*)uniqueFileName {
-  CFUUIDRef uuid = CFUUIDCreate(NULL);
-  CFStringRef uuidString = CFUUIDCreateString(NULL, uuid);
-  CFRelease(uuid);
-  NSString *uniqueFileName = [NSString stringWithFormat:@"%@", (__bridge NSString*)uuidString];
-  CFRelease(uuidString);
-  return uniqueFileName;
-}
-
 + (NSString*)uniquePhotoPath {
-  return [NSString stringWithFormat:@"%@/%@.JPG", [NSBundle mainBundle].documentsPath, [self uniqueFileName]];
+  return [NSString stringWithFormat:@"%@/%@.JPG", [NSBundle mainBundle].documentsPath, [NSFileManager uniqueFileName]];
 }
 
 + (void)savePhoto:(UIImage*)photo {
@@ -86,33 +79,38 @@
   [[NSFileManager defaultManager] removeItemAtPath:photoPath error:nil];
 }
 
++ (void)importPhotos:(NSArray *)photoURLs progress:(void(^)(float percent))progress complete:(void(^)())complete {
+  [self importPhotosRecursive:photoURLs index:0 progress:progress complete:complete];
+}
+
 + (void)importPhotosRecursive:(NSArray*)photosURLs index:(NSInteger)index progress:(void(^)(float percent))progress complete:(void(^)())complete {
-  progress((index + 1) / (float)photosURLs.count);
-  
   // Exit
-  if (index + 1 == photosURLs.count) {
+  if (index == photosURLs.count) {
     complete();
     return;
   }
+  
+  progress((index + 1) / (float)photosURLs.count);
   
   //Work
   ALAssetsLibrary* assetLibrary = [[ALAssetsLibrary alloc] init];
   NSURL* photoURL = [photosURLs objectAtIndex:index];
   [assetLibrary assetForURL:photoURL resultBlock:^(ALAsset *asset) {
-    CFURLRef url = (__bridge CFURLRef)[NSURL fileURLWithPath:[self uniquePhotoPath]];
-    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, kUTTypeJPEG, 1, NULL);
-    CGImageDestinationAddImage(destination, asset.defaultRepresentation.fullResolutionImage, nil);
-    CGImageDestinationFinalize(destination);
+    
+    Byte *buffer = (Byte*)malloc(asset.defaultRepresentation.size);
+    NSInteger length = [asset.defaultRepresentation getBytes:buffer
+                                                  fromOffset: 0.0
+                                                      length:asset.defaultRepresentation.size
+                                                       error:nil];
+    
+    NSData *rawData = [NSData dataWithBytesNoCopy:buffer length:length freeWhenDone:YES];
+    [rawData writeToFile:[self uniquePhotoPath] atomically:YES];
 
     // Next
     [self importPhotosRecursive:photosURLs index:index + 1 progress:progress complete:complete];
   } failureBlock:^(NSError *error) {
     NSLog(@"%@", error);
   }];
-}
-
-+ (void)importPhotos:(NSArray *)photoURLs progress:(void(^)(float percent))progress complete:(void(^)())complete {
-  [self importPhotosRecursive:photoURLs index:0 progress:progress complete:complete];
 }
 
 @end

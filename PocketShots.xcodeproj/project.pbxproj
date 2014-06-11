@@ -11,10 +11,6 @@
 		4C322FB31947A2CA00361E44 /* NSDate+DateFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB21947A2CA00361E44 /* NSDate+DateFromString.m */; };
 		4C322FB61947A3D500361E44 /* NSFileManager+Filename.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB51947A3D500361E44 /* NSFileManager+Filename.m */; };
 		4C322FB91947A4B600361E44 /* NSBundle+Documents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB81947A4B600361E44 /* NSBundle+Documents.m */; };
-		4C322FBB1947A99700361E44 /* NSDateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FBA1947A99700361E44 /* NSDateTests.m */; };
-		4C322FBD1947AF7600361E44 /* PhotoAlbumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FBC1947AF7600361E44 /* PhotoAlbumTests.m */; };
-		4C322FC01947B53300361E44 /* Exif.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FBF1947B53300361E44 /* Exif.m */; };
-		4C322FC21947B7E200361E44 /* ExifTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FC11947B7E200361E44 /* ExifTests.m */; };
 		4C850D6E194496010005A492 /* FinishSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D6D194496010005A492 /* FinishSetupViewController.m */; };
 		4C850D71194498520005A492 /* ImportFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D70194498520005A492 /* ImportFinishedViewController.m */; };
 		4C850D751944A1AA0005A492 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C850D741944A1AA0005A492 /* NSArray+Functional.m */; };
@@ -40,7 +36,6 @@
 		4CCA90011943387500A3055B /* PhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90001943387500A3055B /* PhotoAlbum.m */; };
 		4CCA90041943398E00A3055B /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90031943398E00A3055B /* PhotoViewController.m */; };
 		4CCA90071943532600A3055B /* ImportSelectPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90061943532600A3055B /* ImportSelectPhotosViewController.m */; };
-		4CD93D881947C4C300CFA1CB /* TestJpg.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD93D871947C4C300CFA1CB /* TestJpg.m */; };
 		4CE058A119448AAB007D01CB /* SetupImportPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE058A019448AAB007D01CB /* SetupImportPhotosViewController.m */; };
 		4CF42D7019448F7D00F00C4E /* ImportProcessingPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF42D6F19448F7D00F00C4E /* ImportProcessingPhotosViewController.m */; };
 		4E7AC8534079445E94243DFB /* libPods-PocketShotsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB173D754BA14A2BB92B323B /* libPods-PocketShotsTests.a */; };
@@ -64,11 +59,6 @@
 		4C322FB51947A3D500361E44 /* NSFileManager+Filename.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Filename.m"; sourceTree = "<group>"; };
 		4C322FB71947A4B600361E44 /* NSBundle+Documents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Documents.h"; sourceTree = "<group>"; };
 		4C322FB81947A4B600361E44 /* NSBundle+Documents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Documents.m"; sourceTree = "<group>"; };
-		4C322FBA1947A99700361E44 /* NSDateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateTests.m; sourceTree = "<group>"; };
-		4C322FBC1947AF7600361E44 /* PhotoAlbumTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoAlbumTests.m; sourceTree = "<group>"; };
-		4C322FBE1947B53300361E44 /* Exif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exif.h; sourceTree = "<group>"; };
-		4C322FBF1947B53300361E44 /* Exif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exif.m; sourceTree = "<group>"; };
-		4C322FC11947B7E200361E44 /* ExifTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExifTests.m; sourceTree = "<group>"; };
 		4C850D6C194496010005A492 /* FinishSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishSetupViewController.h; sourceTree = "<group>"; };
 		4C850D6D194496010005A492 /* FinishSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishSetupViewController.m; sourceTree = "<group>"; };
 		4C850D6F194498520005A492 /* ImportFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportFinishedViewController.h; sourceTree = "<group>"; };
@@ -109,8 +99,6 @@
 		4CCA90031943398E00A3055B /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		4CCA90051943532600A3055B /* ImportSelectPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportSelectPhotosViewController.h; sourceTree = "<group>"; };
 		4CCA90061943532600A3055B /* ImportSelectPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportSelectPhotosViewController.m; sourceTree = "<group>"; };
-		4CD93D861947C4C300CFA1CB /* TestJpg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestJpg.h; sourceTree = "<group>"; };
-		4CD93D871947C4C300CFA1CB /* TestJpg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestJpg.m; sourceTree = "<group>"; };
 		4CE0589F19448AAB007D01CB /* SetupImportPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupImportPhotosViewController.h; sourceTree = "<group>"; };
 		4CE058A019448AAB007D01CB /* SetupImportPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupImportPhotosViewController.m; sourceTree = "<group>"; };
 		4CF42D6E19448F7D00F00C4E /* ImportProcessingPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportProcessingPhotosViewController.h; sourceTree = "<group>"; };
@@ -177,8 +165,6 @@
 			children = (
 				4CCA8FFF1943387500A3055B /* PhotoAlbum.h */,
 				4CCA90001943387500A3055B /* PhotoAlbum.m */,
-				4C322FBE1947B53300361E44 /* Exif.h */,
-				4C322FBF1947B53300361E44 /* Exif.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -277,11 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				4CCA8FED1943362B00A3055B /* Supporting Files */,
-				4C322FBA1947A99700361E44 /* NSDateTests.m */,
-				4C322FBC1947AF7600361E44 /* PhotoAlbumTests.m */,
-				4C322FC11947B7E200361E44 /* ExifTests.m */,
-				4CD93D861947C4C300CFA1CB /* TestJpg.h */,
-				4CD93D871947C4C300CFA1CB /* TestJpg.m */,
 			);
 			path = PocketShotsTests;
 			sourceTree = "<group>";
@@ -504,7 +485,6 @@
 				4C850D751944A1AA0005A492 /* NSArray+Functional.m in Sources */,
 				4CE058A119448AAB007D01CB /* SetupImportPhotosViewController.m in Sources */,
 				4C322FB31947A2CA00361E44 /* NSDate+DateFromString.m in Sources */,
-				4C322FC01947B53300361E44 /* Exif.m in Sources */,
 				4C850D71194498520005A492 /* ImportFinishedViewController.m in Sources */,
 				4C322FB91947A4B600361E44 /* NSBundle+Documents.m in Sources */,
 				4CF42D7019448F7D00F00C4E /* ImportProcessingPhotosViewController.m in Sources */,
@@ -520,10 +500,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C322FBD1947AF7600361E44 /* PhotoAlbumTests.m in Sources */,
-				4CD93D881947C4C300CFA1CB /* TestJpg.m in Sources */,
-				4C322FC21947B7E200361E44 /* ExifTests.m in Sources */,
-				4C322FBB1947A99700361E44 /* NSDateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

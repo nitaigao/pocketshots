@@ -1,6 +1,7 @@
 #import "PhotoViewController.h"
 
 #import "PhotoAlbum.h"
+#import "NSBundle+Documents.h"
 
 @interface PhotoViewController ()
 
@@ -15,7 +16,8 @@
 }
 
 - (IBAction)trashPhoto:(id)sender {
-  [PhotoAlbum deletePhoto:photoPath];
+  PhotoAlbum* photoAlbum = [PhotoAlbum albumWithDirectory:[NSBundle mainBundle].documentsPath];
+  [photoAlbum deletePhoto:photoPath];
   [self.navigationController popViewControllerAnimated:YES];
 }
 

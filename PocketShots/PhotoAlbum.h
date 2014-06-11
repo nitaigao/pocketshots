@@ -2,14 +2,14 @@
 
 @class ALAssetsLibrary;
 
-@interface PhotoAlbum : NSObject {
+@interface PhotoAlbum : NSObject<NSFastEnumeration> {
   NSString* directoryPath;
-  NSArray* photos;
+  NSMutableArray* photos;
 }
 
 - (instancetype)initWithDirectory:(NSString*)directoryPath;
 
-// Context Specific
++ (instancetype)albumWithDirectory:(NSString*)directoryPath;
 
 - (void)loadPhotos;
 
@@ -17,14 +17,10 @@
 
 - (NSString*)photoAtIndex:(NSInteger)index;
 
-- (void)purge;
+- (void)deletePhoto:(NSString*)photoPath;
 
-// Generic External
+- (void)importPhotos:(NSArray*)photoURLs progress:(void(^)(float))progress complete:(void(^)())complete;
 
-+ (void)savePhoto:(UIImage*)photo;
-
-+ (void)deletePhoto:(NSString*)photoPath;
-
-+ (void)importPhotos:(NSArray*)photoURLs progress:(void(^)(float))progress complete:(void(^)())complete;
+- (void)savePhoto:(UIImage*)photo forDate:(NSDate*)date;
 
 @end

@@ -1,6 +1,7 @@
 #import "ImportProcessingPhotosViewController.h"
 
 #import "PhotoAlbum.h"
+#import "NSBundle+Documents.h"
 
 @interface ImportProcessingPhotosViewController ()
 
@@ -37,7 +38,9 @@
 }
 
 - (void)processPhotos:(NSArray*)photos {
-  [PhotoAlbum importPhotos:photosToProcess progress:^(float progress) {
+  PhotoAlbum* photoAlbum = [PhotoAlbum albumWithDirectory:[NSBundle mainBundle].documentsPath];
+  
+  [photoAlbum importPhotos:photosToProcess progress:^(float progress) {
     NSLog(@"%f", progress);
     [self performSelectorOnMainThread:@selector(updateProgress:) withObject:[NSNumber numberWithFloat:progress] waitUntilDone:YES];
   } complete:^{

@@ -1,17 +1,13 @@
 #import "PhotoAlbum.h"
 
+#import <ImageIO/ImageIO.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
-#import "NSArray+Functional.h"
 #import "NSDate+DateFromString.h"
 #import <NSArray+F.h>
 #import "NSFileManager+Filename.h"
 #import "NSBundle+Documents.h"
-
-#import <ImageIO/ImageIO.h>
-#import <MobileCoreServices/MobileCoreServices.h>
-
-#import "Exif.h"
 
 @interface PhotoAlbum(Private)
 
@@ -19,73 +15,81 @@
 
 @implementation PhotoAlbum
 
++ (NSString*)uniquePhotoPath {
+  return [NSString stringWithFormat:@"%@/%@.JPG", [NSBundle mainBundle].documentsPath, [NSFileManager uniqueFileName]];
+}
+
 - (instancetype)initWithDirectory:(NSString*)aDirectoryPath {
   self = [super init];
   if (self) {
-    photos = [NSArray array];
+    photos = [NSMutableArray array];
     directoryPath = [NSString stringWithString:aDirectoryPath];
   }
   return self;
 }
 
-- (NSArray*)jpgFiles {
-  NSArray* directoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath error:nil];
-  NSPredicate* filter = [NSPredicate predicateWithFormat:@"self ENDSWITH '.JPG'"];
-  NSArray* jpgFiles = [directoryContents filteredArrayUsingPredicate:filter];
-  return jpgFiles;
++ (instancetype)albumWithDirectory:(NSString*)directoryPath {
+  PhotoAlbum* photoAlbum = [[PhotoAlbum alloc] initWithDirectory:directoryPath];
+  [photoAlbum loadPhotos];
+  return photoAlbum;
+}
+
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len {
+  return [photos countByEnumeratingWithState:state objects:buffer count:len];
+}
+
+- (void)saveMetaData {
+  NSString* metaDataPath = [NSString stringWithFormat:@"%@/metadata.plist", directoryPath];
+  [photos writeToFile:metaDataPath atomically:YES];
 }
 
 - (void)loadPhotos {
-  NSArray* jpgFiles = [self jpgFiles];
+  NSString* metaDataPath = [NSString stringWithFormat:@"%@/metadata.plist", directoryPath];
+  NSArray* loadedPhotos = [NSArray arrayWithContentsOfFile:metaDataPath];
   
-  NSArray* photoPaths = [jpgFiles map:^id(NSString* filename) {
-    NSString* photoPath = [NSString stringWithFormat:@"%@/%@", [NSBundle mainBundle].documentsPath, filename];
-    return photoPath;
-  }];
-
-  photos = [[[photoPaths sortedArrayUsingComparator:^NSComparisonResult(NSString* photoA, NSString* photoB) {
-    Exif* exifA = [[Exif alloc] initWithFile:photoA];
-    Exif* exifB = [[Exif alloc] initWithFile:photoB];
-    
-    NSComparisonResult comparisonResult = [exifA.digitizedDate compare:exifB.digitizedDate];
+  [photos removeAllObjects];
+  
+  NSArray* sortedPhotos = [loadedPhotos sortedArrayUsingComparator:^NSComparisonResult(NSDictionary* a, NSDictionary* b) {
+    NSComparisonResult comparisonResult = [[a objectForKey:@"date"] compare:[b objectForKey:@"date"]];
     return comparisonResult;
-  }] reverseObjectEnumerator] allObjects];
+  }];
+  
+  NSArray* reversedPhotos = [[sortedPhotos reverseObjectEnumerator] allObjects];
+  
+  photos = [NSMutableArray arrayWithArray:reversedPhotos];
 }
 
 - (NSString*)photoAtIndex:(NSInteger)index {
-  return [photos objectAtIndex:index];
+  return [[photos objectAtIndex:index] objectForKey:@"path"];
 }
 
 - (NSInteger)photoCount {
   return photos.count;
 }
 
-- (void)purge {
-  for (NSString* photoPath in photos) {
+- (void)deletePhoto:(NSString*)photoPath {
+  NSArray* toDelete = [photos filter:^BOOL(NSDictionary* element) {
+    return [[element objectForKey:@"path"] isEqualToString:photoPath];
+  }];
+  
+  [toDelete enumerateObjectsUsingBlock:^(NSDictionary* element, NSUInteger index, BOOL *stop) {
+    NSString* photoPath = [element objectForKey:@"path"];
+    [photos removeObject:element];
     [[NSFileManager defaultManager] removeItemAtPath:photoPath error:nil];
-  }
+  }];
+  
+  [self saveMetaData];
 }
 
-+ (NSString*)uniquePhotoPath {
-  return [NSString stringWithFormat:@"%@/%@.JPG", [NSBundle mainBundle].documentsPath, [NSFileManager uniqueFileName]];
-}
-
-+ (void)savePhoto:(UIImage*)photo {
-  NSString* photoPath = [self uniquePhotoPath];
-  [UIImageJPEGRepresentation(photo, 1.0f) writeToFile:photoPath atomically:YES];
-}
-
-+ (void)deletePhoto:(NSString*)photoPath {
-  [[NSFileManager defaultManager] removeItemAtPath:photoPath error:nil];
-}
-
-+ (void)importPhotos:(NSArray *)photoURLs progress:(void(^)(float percent))progress complete:(void(^)())complete {
+- (void)importPhotos:(NSArray *)photoURLs progress:(void(^)(float percent))progress complete:(void(^)())complete {
   [self importPhotosRecursive:photoURLs index:0 progress:progress complete:complete];
 }
 
-+ (void)importPhotosRecursive:(NSArray*)photosURLs index:(NSInteger)index progress:(void(^)(float percent))progress complete:(void(^)())complete {
+- (void)importPhotosRecursive:(NSArray*)photosURLs index:(NSInteger)index progress:(void(^)(float percent))progress complete:(void(^)())complete {
   // Exit
   if (index == photosURLs.count) {
+    [self saveMetaData];
     complete();
     return;
   }
@@ -103,14 +107,25 @@
                                                       length:asset.defaultRepresentation.size
                                                        error:nil];
     
+    NSString* photoPath = [PhotoAlbum uniquePhotoPath];
     NSData *rawData = [NSData dataWithBytesNoCopy:buffer length:length freeWhenDone:YES];
-    [rawData writeToFile:[self uniquePhotoPath] atomically:YES];
-
+    [rawData writeToFile:photoPath atomically:YES];
+    
+    NSDate* creationDate = (NSDate*)[asset valueForProperty:ALAssetPropertyDate];
+    [photos addObject:@{@"path":photoPath, @"date": creationDate}];
+    
     // Next
     [self importPhotosRecursive:photosURLs index:index + 1 progress:progress complete:complete];
   } failureBlock:^(NSError *error) {
     NSLog(@"%@", error);
   }];
+}
+
+- (void)savePhoto:(UIImage*)photo forDate:(NSDate*)date {
+  NSString* photoPath = [PhotoAlbum uniquePhotoPath];
+  [UIImageJPEGRepresentation(photo, 1.0f) writeToFile:photoPath atomically:YES];
+  [photos addObject:@{@"path":photoPath, @"date": date}];
+  [self saveMetaData];
 }
 
 @end

@@ -20,7 +20,7 @@
 {
   self = [super initWithCoder:coder];
   if (self) {
-    photoAlbum = [[PhotoAlbum alloc] initWithDirectory:[NSBundle mainBundle].documentsPath];
+    photoAlbum = [PhotoAlbum albumWithDirectory:[NSBundle mainBundle].documentsPath];
   }
   return self;
 }

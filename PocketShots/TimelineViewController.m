@@ -107,7 +107,26 @@
   Photo* photo = [photoAlbum photoAtIndex:indexPath.row];
   cell.photo.image = [UIImage imageWithContentsOfFile:photo.path];
   cell.photoPath = photo.path;
-  cell.date.text = photo.shortDate;
+  
+  NSString* shortDate = photo.shortDate;
+  NSRange range = [shortDate rangeOfString:@" "];
+  NSInteger suffixIndex = range.location - 2;
+  
+  NSMutableAttributedString *formattedDate = [[NSMutableAttributedString alloc] initWithString:photo.shortDate];
+
+  [formattedDate addAttribute:NSFontAttributeName
+                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:28.0]
+                        range:NSMakeRange(0, suffixIndex)];
+
+  [formattedDate addAttribute:NSFontAttributeName
+                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:16.0]
+                        range:NSMakeRange(suffixIndex, 2)];
+  
+  [formattedDate addAttribute:NSFontAttributeName
+                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:21.0]
+                        range:NSMakeRange(range.location, photo.shortDate.length - range.location)];
+  
+  cell.date.attributedText = formattedDate;
   
 //  [cell.layer setMasksToBounds    :NO];
 //  [cell.layer setShadowColor      :[[UIColor blackColor ] CGColor]];

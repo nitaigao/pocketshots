@@ -3,6 +3,7 @@
 #import "PhotoAlbum.h"
 
 #import "TimelineCollectionViewCell.h"
+#import "TimelineCollectionViewCellContentContainer.h"
 
 #import "PhotoViewController.h"
 
@@ -11,8 +12,6 @@
 #import "Photo.h"
 
 #import "QuartzCore/CALayer.h"
-
-#import "PhotoDeleteActionSheetDelegate.h"
 
 @interface UIBarButtonItem(MyCategory)
 
@@ -111,10 +110,11 @@
   cell.photoPath = photo.path;
   
   cell.date.attributedText = photo.formattedDate;
+  cell.timelineViewController = self;
   
   UIGestureRecognizer* panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
   panGestureRecognizer.delegate = self;
-  [cell addGestureRecognizer:panGestureRecognizer];
+  [cell.contentContainer addGestureRecognizer:panGestureRecognizer];
   
   [collectionView.panGestureRecognizer requireGestureRecognizerToFail:panGestureRecognizer];
   
@@ -152,52 +152,29 @@
   }
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-  if (buttonIndex == 1) {
-    
-    TimelineCollectionViewCell* viewCell = (TimelineCollectionViewCell*)[photosCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:actionSheet.tag inSection:0]];
-    [UIView animateWithDuration:0.2
-                     animations:^{viewCell.frame = viewCell.initialFrame; }
-                     completion: nil];
-  }
-  
-  if (buttonIndex == 0) {
-    TimelineCollectionViewCell* viewCell = (TimelineCollectionViewCell*)[photosCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:actionSheet.tag inSection:0]];
-    [photoAlbum deletePhoto:viewCell.photoPath];
-    NSIndexPath* indexPath = [photosCollectionView indexPathForCell:viewCell];
-    [photosCollectionView deleteItemsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil]];
-  }
-}
-
-- (void)removeCell:(TimelineCollectionViewCell*)cell {
-  UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Delete?"
-                                                           delegate:self
-                                                    cancelButtonTitle:@"Cancel"
-                                             destructiveButtonTitle:@"Delete"
-                                                  otherButtonTitles:nil];
-  
-  actionSheet.tag = [photosCollectionView indexPathForCell:cell].row;
-  [actionSheet showInView:self.view];
-}
-
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
   CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
-  return (translation.y * translation.y < translation.x * translation.x);
+  BOOL result = (translation.y * translation.y < translation.x * translation.x);
+//  NSLog(@"%d", result);
+  return result;
 }
 
 - (void)panDetected:(UIPanGestureRecognizer *)panRecognizer {
   
   if (panRecognizer.state == UIGestureRecognizerStateBegan) {
-    TimelineCollectionViewCell* viewCell =  (TimelineCollectionViewCell*)panRecognizer.view;
-    viewCell.initialFrame = viewCell.frame;
+    TimelineCollectionViewCellContentContainer* contentContainer =  (TimelineCollectionViewCellContentContainer*)panRecognizer.view;
+    contentContainer.initialFrame = contentContainer.frame;
   }
   
   if (panRecognizer.state == UIGestureRecognizerStateChanged) {
+    TimelineCollectionViewCellContentContainer* contentContainer =  (TimelineCollectionViewCellContentContainer*)panRecognizer.view;
+    
     CGPoint translation = [panRecognizer translationInView:panRecognizer.view];
-    CGPoint imageViewPosition = panRecognizer.view.center;
-    imageViewPosition.x += translation.x;
-    if (imageViewPosition.x <= 160) {
-      panRecognizer.view.center = imageViewPosition;
+    
+    CGPoint viewPosition = contentContainer.center;
+    viewPosition.x += translation.x;
+    if (viewPosition.x <= 160) {
+      contentContainer.center = viewPosition;
       [panRecognizer setTranslation:CGPointZero inView:panRecognizer.view];
     }
   }
@@ -206,17 +183,20 @@
     if (panRecognizer.view.center.x < 50) {
       [UIView animateWithDuration:0.4
                        animations:^{panRecognizer.view.frame = CGRectMake(panRecognizer.view.frame.origin.x - 1000, panRecognizer.view.frame.origin.y, panRecognizer.view.frame.size.width, panRecognizer.view.frame.size.height);}
-                       completion:^(BOOL finished) {
-                         TimelineCollectionViewCell* viewCell =  (TimelineCollectionViewCell*)panRecognizer.view;
-                         [self removeCell:viewCell];
-                       }];
+                       completion:nil];
     } else {
-      TimelineCollectionViewCell* viewCell =  (TimelineCollectionViewCell*)panRecognizer.view;
+      TimelineCollectionViewCellContentContainer* contentContainer =  (TimelineCollectionViewCellContentContainer*)panRecognizer.view;
       [UIView animateWithDuration:0.2
-                       animations:^{panRecognizer.view.frame = viewCell.initialFrame; }
+                       animations:^{panRecognizer.view.frame = contentContainer.initialFrame; }
                        completion: nil];
     }
   }
+}
+
+- (void)deletePhotoCell:(TimelineCollectionViewCell*)viewCell {
+    [photoAlbum deletePhoto:viewCell.photoPath];
+    NSIndexPath* indexPath = [photosCollectionView indexPathForCell:viewCell];
+    [photosCollectionView deleteItemsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil]];
 }
 
 @end

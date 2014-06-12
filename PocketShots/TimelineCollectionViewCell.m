@@ -1,8 +1,10 @@
 #import "TimelineCollectionViewCell.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @implementation TimelineCollectionViewCell
 
-@synthesize photo, date, photoPath;
+@synthesize photo, photoContainer, statsContainer, date, photoPath;
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {

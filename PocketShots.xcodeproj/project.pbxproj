@@ -19,6 +19,9 @@
 		4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C956BCB194368C600CA299D /* NewPhotoViewController.m */; };
 		4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA5D0F81946230B005136A4 /* GameKit.framework */; };
 		4CB032871948FA9700B29224 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB032861948FA9700B29224 /* Photo.m */; };
+		4CB1A0A21949E8A100E9B4BF /* PhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1A0A11949E8A100E9B4BF /* PhotoImageView.m */; };
+		4CB1A0A51949FF1300E9B4BF /* button-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB1A0A31949FF1300E9B4BF /* button-camera.png */; };
+		4CB1A0A8194A276300E9B4BF /* button-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB1A0A6194A276300E9B4BF /* button-camera@2x.png */; };
 		4CC6EA701944EA9F00582054 /* NoPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */; };
 		4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
 		4CCA8FC71943362B00A3055B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC61943362B00A3055B /* CoreGraphics.framework */; };
@@ -75,6 +78,10 @@
 		4CA5D0FA19462314005136A4 /* PocketShots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PocketShots.entitlements; sourceTree = SOURCE_ROOT; };
 		4CB032851948FA9700B29224 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		4CB032861948FA9700B29224 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		4CB1A0A01949E8A100E9B4BF /* PhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoImageView.h; sourceTree = "<group>"; };
+		4CB1A0A11949E8A100E9B4BF /* PhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoImageView.m; sourceTree = "<group>"; };
+		4CB1A0A41949FF1300E9B4BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/button-camera.png"; sourceTree = "<group>"; };
+		4CB1A0A7194A276300E9B4BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/button-camera@2x.png"; sourceTree = "<group>"; };
 		4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPhotosViewController.h; sourceTree = "<group>"; };
 		4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPhotosViewController.m; sourceTree = "<group>"; };
 		4CCA8FC11943362A00A3055B /* PocketShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +192,8 @@
 				4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */,
 				4C8EF01619463F35004EE7BA /* TimelineCollectionViewCell.h */,
 				4C8EF01719463F35004EE7BA /* TimelineCollectionViewCell.m */,
+				4CB1A0A01949E8A100E9B4BF /* PhotoImageView.h */,
+				4CB1A0A11949E8A100E9B4BF /* PhotoImageView.m */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -255,6 +264,8 @@
 		4CCA8FCB1943362B00A3055B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CB1A0A6194A276300E9B4BF /* button-camera@2x.png */,
+				4CB1A0A31949FF1300E9B4BF /* button-camera.png */,
 				4CA5D0FA19462314005136A4 /* PocketShots.entitlements */,
 				4CCA8FCC1943362B00A3055B /* PocketShots-Info.plist */,
 				4CCA8FCD1943362B00A3055B /* InfoPlist.strings */,
@@ -400,6 +411,8 @@
 				4CCA8FE01943362B00A3055B /* Images.xcassets in Resources */,
 				4CCA8FD81943362B00A3055B /* Main_iPhone.storyboard in Resources */,
 				4CCA8FCF1943362B00A3055B /* InfoPlist.strings in Resources */,
+				4CB1A0A51949FF1300E9B4BF /* button-camera.png in Resources */,
+				4CB1A0A8194A276300E9B4BF /* button-camera@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB1A0A21949E8A100E9B4BF /* PhotoImageView.m in Sources */,
 				4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */,
 				4CC6EA701944EA9F00582054 /* NoPhotosViewController.m in Sources */,
 				4CCA90011943387500A3055B /* PhotoAlbum.m in Sources */,
@@ -520,6 +534,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4CB1A0A31949FF1300E9B4BF /* button-camera.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB1A0A41949FF1300E9B4BF /* Base */,
+			);
+			name = "button-camera.png";
+			sourceTree = "<group>";
+		};
+		4CB1A0A6194A276300E9B4BF /* button-camera@2x.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB1A0A7194A276300E9B4BF /* Base */,
+			);
+			name = "button-camera@2x.png";
+			sourceTree = "<group>";
+		};
 		4CCA8FCD1943362B00A3055B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

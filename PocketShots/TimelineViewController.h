@@ -4,7 +4,7 @@
 
 #import "PhotoAlbum.h"
 
-@interface TimelineViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewEmptyStateDelegate> {
+@interface TimelineViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewEmptyStateDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate> {
   PhotoAlbum* photoAlbum;
 }
 

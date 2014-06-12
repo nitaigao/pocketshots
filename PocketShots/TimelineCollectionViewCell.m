@@ -4,12 +4,13 @@
 
 @implementation TimelineCollectionViewCell
 
-@synthesize photo, photoContainer, statsContainer, date, photoPath;
+@synthesize photo, photoContainer, statsContainer, date, photoPath, initialFrame;
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
   self = [super initWithCoder:aDecoder];
   if (self) {
+ 
   }
   return self;
 }

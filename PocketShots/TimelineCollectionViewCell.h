@@ -9,6 +9,8 @@
 @property (nonatomic, weak) IBOutlet UILabel* date;
 @property (nonatomic, strong) NSString* photoPath;
 
+@property (nonatomic, readwrite) CGRect initialFrame;
+
 - (void)setPhotoImage:(NSString*)photoPath;
 
 @end

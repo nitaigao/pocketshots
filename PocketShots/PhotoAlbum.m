@@ -9,6 +9,8 @@
 #import "NSFileManager+Filename.h"
 #import "NSBundle+Documents.h"
 
+#import "Photo.h"
+
 @interface PhotoAlbum(Private)
 
 @end
@@ -33,7 +35,6 @@
   [photoAlbum loadPhotos];
   return photoAlbum;
 }
-
 
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len {
   return [photos countByEnumeratingWithState:state objects:buffer count:len];
@@ -60,8 +61,12 @@
   photos = [NSMutableArray arrayWithArray:reversedPhotos];
 }
 
-- (NSString*)photoAtIndex:(NSInteger)index {
-  return [[photos objectAtIndex:index] objectForKey:@"path"];
+- (Photo*)photoAtIndex:(NSInteger)index {
+  NSDictionary* photoData = [photos objectAtIndex:index];
+  Photo* photo = [[Photo alloc] init];
+  photo.path = [photoData objectForKey:@"path"];
+  photo.date = [photoData objectForKey:@"date"];
+  return photo;
 }
 
 - (NSInteger)photoCount {

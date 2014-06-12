@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 
 @class ALAssetsLibrary;
+@class Photo;
 
 @interface PhotoAlbum : NSObject<NSFastEnumeration> {
   NSString* directoryPath;
@@ -15,7 +16,7 @@
 
 - (NSInteger)photoCount;
 
-- (NSString*)photoAtIndex:(NSInteger)index;
+- (Photo*)photoAtIndex:(NSInteger)index;
 
 - (void)deletePhoto:(NSString*)photoPath;
 

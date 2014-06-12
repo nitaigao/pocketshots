@@ -18,6 +18,7 @@
 		4C956BC919435F9200CA299D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C956BC819435F9200CA299D /* AssetsLibrary.framework */; };
 		4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C956BCB194368C600CA299D /* NewPhotoViewController.m */; };
 		4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA5D0F81946230B005136A4 /* GameKit.framework */; };
+		4CB032871948FA9700B29224 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB032861948FA9700B29224 /* Photo.m */; };
 		4CC6EA701944EA9F00582054 /* NoPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */; };
 		4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
 		4CCA8FC71943362B00A3055B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC61943362B00A3055B /* CoreGraphics.framework */; };
@@ -72,6 +73,8 @@
 		4C956BCB194368C600CA299D /* NewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoViewController.m; sourceTree = "<group>"; };
 		4CA5D0F81946230B005136A4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		4CA5D0FA19462314005136A4 /* PocketShots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PocketShots.entitlements; sourceTree = SOURCE_ROOT; };
+		4CB032851948FA9700B29224 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		4CB032861948FA9700B29224 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPhotosViewController.h; sourceTree = "<group>"; };
 		4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPhotosViewController.m; sourceTree = "<group>"; };
 		4CCA8FC11943362A00A3055B /* PocketShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +168,8 @@
 			children = (
 				4CCA8FFF1943387500A3055B /* PhotoAlbum.h */,
 				4CCA90001943387500A3055B /* PhotoAlbum.m */,
+				4CB032851948FA9700B29224 /* Photo.h */,
+				4CB032861948FA9700B29224 /* Photo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				4C850D71194498520005A492 /* ImportFinishedViewController.m in Sources */,
 				4C322FB91947A4B600361E44 /* NSBundle+Documents.m in Sources */,
 				4CF42D7019448F7D00F00C4E /* ImportProcessingPhotosViewController.m in Sources */,
+				4CB032871948FA9700B29224 /* Photo.m in Sources */,
 				4C322FB61947A3D500361E44 /* NSFileManager+Filename.m in Sources */,
 				4CCA90041943398E00A3055B /* PhotoViewController.m in Sources */,
 				4CCA8FD51943362B00A3055B /* AppDelegate.m in Sources */,

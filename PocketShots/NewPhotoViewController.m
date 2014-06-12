@@ -30,30 +30,6 @@
   NSDate* captureDate = [NSDate date];
   [photoAlbum savePhoto:image forDate:captureDate];
   
-//  NSData* jpegData = UIImageJPEGRepresentation(image, 1.0f);
-//  NSDate *digitizedDate = [NSDate date];
-//
-//  CGImageSourceRef sourceRef = CGImageSourceCreateWithData((__bridge CFDataRef)jpegData, NULL);
-//  CFDictionaryRef metadata = CGImageSourceCopyPropertiesAtIndex(sourceRef, 0, NULL);
-//  if (NULL != metadata) {
-//
-//    CFDictionaryRef exifData = CFDictionaryGetValue(metadata, kCGImagePropertyExifDictionary);
-//    if (NULL != exifData) {
-//
-//      NSDictionary* dic = (__bridge NSDictionary*)metadata;
-//      NSLog(@"%@", dic);
-//      CFStringRef digitizedDateRaw = CFDictionaryGetValue(exifData, kCGImagePropertyExifDateTimeDigitized);
-//      NSString* digitizedDateString = (__bridge NSString*)digitizedDateRaw;
-//
-//      if (digitizedDateString) {
-//        NSLog(@"%@", digitizedDateString);
-////        digitizedDate = [NSDate dateFromExifString:digitizedDateString];
-//      }
-//    }
-//
-//    CFRelease(metadata);
-//  }
-
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -8,6 +8,8 @@
 
 #import "NSBundle+Documents.h"
 
+#import "Photo.h"
+
 @interface TimelineViewController ()
 
 @end
@@ -34,24 +36,46 @@
   photosCollectionView.emptyState_view = emptyViewController.view;
 
   [self.navigationController.toolbar setBackgroundImage:[UIImage new]
-                forToolbarPosition:UIBarPositionAny
-                        barMetrics:UIBarMetricsDefault];
+                                     forToolbarPosition:UIBarPositionAny
+                                             barMetrics:UIBarMetricsDefault];
  
   [self.navigationController.toolbar setShadowImage:[UIImage new]
-            forToolbarPosition:UIToolbarPositionAny];
+                                 forToolbarPosition:UIToolbarPositionAny];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [self.navigationController setNavigationBarHidden:NO animated:animated];
+  [self.navigationController setToolbarHidden:NO animated:animated];
+
+  photosCollectionView.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
   [photoAlbum loadPhotos];
   [photosCollectionView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  photosCollectionView.delegate = nil;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   TimelineCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectonViewCell" forIndexPath:indexPath];
   
-  NSString* photoPath = [photoAlbum photoAtIndex:indexPath.row];
-  cell.photo.image = [UIImage imageWithContentsOfFile:photoPath];
-  cell.photoPath = photoPath;
+  Photo* photo = [photoAlbum photoAtIndex:indexPath.row];
+  cell.photo.image = [UIImage imageWithContentsOfFile:photo.path];
+  cell.photoPath = photo.path;
+  cell.date.text = photo.shortDate;
+  
+  [cell.layer setMasksToBounds    :NO];
+  [cell.layer setShadowColor      :[[UIColor blackColor ] CGColor]];
+  [cell.layer setShadowOpacity    :0.65];
+  [cell.layer setShadowRadius     :1.0];
+  [cell.layer setShadowOffset     :CGSizeMake( 0 , 0 )];
+  [cell.layer setShouldRasterize  :YES];
+  [cell.layer setShadowPath       :[[UIBezierPath bezierPathWithRect:cell.bounds ] CGPath ]];
   
   return cell;
 }
@@ -62,6 +86,18 @@
     TimelineCollectionViewCell* timeLineCollectionViewCell = sender;
     PhotoViewController* photoViewController = segue.destinationViewController;
     [photoViewController setPhotoPath:timeLineCollectionViewCell.photoPath];
+  }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+  CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
+  
+  if(translation.y > 0) {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setToolbarHidden:NO animated:YES];
+  } else {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self.navigationController setToolbarHidden:YES animated:YES];
   }
 }
 

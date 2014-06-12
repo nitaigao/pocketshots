@@ -13,6 +13,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   photo.image = [UIImage imageWithContentsOfFile:photoPath];
+  [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (IBAction)trashPhoto:(id)sender {

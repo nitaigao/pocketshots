@@ -36,7 +36,7 @@
   [dateFormatter setDateFormat:@"MMMM"];
   NSString *monthString = [dateFormatter stringFromDate:self.date];
   
-  NSString* suffixedDate = [NSString stringWithFormat:@"%@%@ %@", dayString, self.date.daySuffix, monthString];
+  NSString* suffixedDate = [NSString stringWithFormat:@"%@ %@%@", monthString, dayString, self.date.daySuffix];
   return suffixedDate;
 }
 

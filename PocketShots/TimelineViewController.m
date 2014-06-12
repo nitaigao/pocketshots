@@ -109,51 +109,41 @@
   cell.photoPath = photo.path;
   
   NSString* shortDate = photo.shortDate;
-  NSRange range = [shortDate rangeOfString:@" "];
-  NSInteger suffixIndex = range.location - 2;
+
+  NSRegularExpression* regEx = [NSRegularExpression
+                                regularExpressionWithPattern:@"^([A-Z])([A-Za-z]*) ([0-9]*)([a-z]*)"
+                                options:0 error:nil];
+  
+  NSTextCheckingResult* result = [[regEx matchesInString:shortDate options:0 range:NSMakeRange(0, shortDate.length)] firstObject];
+  NSRange monthFirstRange = [result rangeAtIndex:1];
+  NSRange monthRemainderRange = [result rangeAtIndex:2];
+  NSRange dayRange = [result rangeAtIndex:3];
+  NSRange suffixRange = [result rangeAtIndex:4];
   
   NSMutableAttributedString *formattedDate = [[NSMutableAttributedString alloc] initWithString:photo.shortDate];
-
+  
   [formattedDate addAttribute:NSFontAttributeName
-                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:28.0]
-                        range:NSMakeRange(0, suffixIndex)];
+                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:30.0]
+                        range:dayRange];
 
   [formattedDate addAttribute:NSFontAttributeName
                         value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:16.0]
-                        range:NSMakeRange(suffixIndex, 2)];
+                        range:suffixRange];
+  
+  [formattedDate addAttribute:NSFontAttributeName
+                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:24.0]
+                        range:monthFirstRange];
+
   
   [formattedDate addAttribute:NSFontAttributeName
                         value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:21.0]
-                        range:NSMakeRange(range.location, photo.shortDate.length - range.location)];
+                        range:monthRemainderRange];
+  
+  
+  
   
   cell.date.attributedText = formattedDate;
   
-//  [cell.layer setMasksToBounds    :NO];
-//  [cell.layer setShadowColor      :[[UIColor blackColor ] CGColor]];
-//  [cell.layer setShadowOpacity    :0.65];
-//  [cell.layer setShadowRadius     :1.0];
-//  [cell.layer setShadowOffset     :CGSizeMake( 0 , 0 )];
-//  [cell.layer setShouldRasterize  :YES];
-//  [cell.layer setShadowPath       :[[UIBezierPath bezierPathWithRect:cell.bounds ] CGPath ]];
-
-//  [cell.layer setMasksToBounds    :NO];
-
-//  [cell.photoContainer.layer setMasksToBounds    :NO];
-//  [cell.photoContainer.layer setShadowColor      :[[UIColor blackColor ] CGColor]];
-//  [cell.photoContainer.layer setShadowOpacity    :0.65];
-//  [cell.photoContainer.layer setShadowRadius     :0.5];
-//  [cell.photoContainer.layer setShadowOffset     :CGSizeMake( 0 , 0 )];
-//  [cell.photoContainer.layer setShouldRasterize  :YES];
-//  [cell.photoContainer.layer setShadowPath       :[[UIBezierPath bezierPathWithRect:cell.photoContainer.bounds ] CGPath ]];
-
-//  [cell.statsContainer.layer setMasksToBounds    :NO];
-//  [cell.statsContainer.layer setShadowColor      :[[UIColor blackColor ] CGColor]];
-//  [cell.statsContainer.layer setShadowOpacity    :0.65];
-//  [cell.statsContainer.layer setShadowRadius     :0.5];
-//  [cell.statsContainer.layer setShadowOffset     :CGSizeMake( 0 , 0 )];
-//  [cell.statsContainer.layer setShouldRasterize  :YES];
-//  [cell.statsContainer.layer setShadowPath       :[[UIBezierPath bezierPathWithRect:cell.statsContainer.bounds ] CGPath ]];
-
   return cell;
 }
 

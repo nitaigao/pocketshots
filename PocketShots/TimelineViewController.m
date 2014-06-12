@@ -108,41 +108,7 @@
   cell.photo.image = [UIImage imageWithContentsOfFile:photo.path];
   cell.photoPath = photo.path;
   
-  NSString* shortDate = photo.shortDate;
-
-  NSRegularExpression* regEx = [NSRegularExpression
-                                regularExpressionWithPattern:@"^([A-Z])([A-Za-z]*) ([0-9]*)([a-z]*)"
-                                options:0 error:nil];
-  
-  NSTextCheckingResult* result = [[regEx matchesInString:shortDate options:0 range:NSMakeRange(0, shortDate.length)] firstObject];
-  NSRange monthFirstRange = [result rangeAtIndex:1];
-  NSRange monthRemainderRange = [result rangeAtIndex:2];
-  NSRange dayRange = [result rangeAtIndex:3];
-  NSRange suffixRange = [result rangeAtIndex:4];
-  
-  NSMutableAttributedString *formattedDate = [[NSMutableAttributedString alloc] initWithString:photo.shortDate];
-  
-  [formattedDate addAttribute:NSFontAttributeName
-                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:30.0]
-                        range:dayRange];
-
-  [formattedDate addAttribute:NSFontAttributeName
-                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:16.0]
-                        range:suffixRange];
-  
-  [formattedDate addAttribute:NSFontAttributeName
-                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:24.0]
-                        range:monthFirstRange];
-
-  
-  [formattedDate addAttribute:NSFontAttributeName
-                        value:[UIFont fontWithName:@"Futura-CondensedExtraBold" size:21.0]
-                        range:monthRemainderRange];
-  
-  
-  
-  
-  cell.date.attributedText = formattedDate;
+  cell.date.attributedText = photo.formattedDate;
   
   return cell;
 }

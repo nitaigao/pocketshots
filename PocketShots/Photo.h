@@ -6,5 +6,6 @@
 @property (nonatomic, strong) NSString* path;
 
 @property (nonatomic, readonly) NSString* shortDate;
+@property (nonatomic, readonly) NSAttributedString* formattedDate;
 
 @end

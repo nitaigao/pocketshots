@@ -32,7 +32,7 @@
 
 + (instancetype)albumWithDirectory:(NSString*)directoryPath {
   PhotoAlbum* photoAlbum = [[PhotoAlbum alloc] initWithDirectory:directoryPath];
-//  [photoAlbum loadPhotos];
+  [photoAlbum loadPhotos];
   return photoAlbum;
 }
 

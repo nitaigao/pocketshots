@@ -17,9 +17,9 @@
   [timelineViewController deletePhotoCell:self];
 }
 
-//- (void)prepareForReuse {
-//  [super prepareForReuse];
-////  self.frame = self.initialFrame;
-//}
+- (void)prepareForReuse {
+  [super prepareForReuse];
+  self.frame = CGRectMake(self.initialFrame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+}
 
 @end

@@ -8,6 +8,7 @@
 
 @interface TimelineViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewEmptyStateDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate> {
   PhotoAlbum* photoAlbum;
+  NSInteger cellsLoaded;
 }
 
 @property (nonatomic, retain) IBOutlet UICollectionView* photosCollectionView;

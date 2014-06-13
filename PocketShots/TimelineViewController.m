@@ -43,7 +43,8 @@
 - (instancetype)initWithCoder:(NSCoder *)coder {
   self = [super initWithCoder:coder];
   if (self) {
-    photoAlbum = [PhotoAlbum albumWithDirectory:[NSBundle mainBundle].documentsPath];
+    photoAlbum = [[PhotoAlbum alloc] initWithDirectory:[NSBundle mainBundle].documentsPath];
+    cellsLoaded = 0;
   }
   return self;
 }
@@ -73,30 +74,41 @@
   [self setToolbarItems:[NSArray arrayWithObjects:left, cameraButtonItem, right, nil] animated:YES];
 }
 
-- (void)animateIn {
+- (void)animateInNav {
   [self.navigationController setNavigationBarHidden:NO animated:YES];
   [self.navigationController setToolbarHidden:NO animated:YES];
-  
+}
+
+- (void)animateInContent {
   photosCollectionView.delegate = self;
   [photoAlbum loadPhotos];
   [photosCollectionView reloadData];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  [self performSelector:@selector(animateIn) withObject:nil afterDelay:1];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+
+  if (cellsLoaded < 1) {
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setToolbarHidden:YES animated:NO];
+
+    [self performSelector:@selector(animateInNav) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector(animateInContent) withObject:nil afterDelay:1.0];
+  } else {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    
+    photosCollectionView.delegate = self;
+    [photoAlbum loadPhotos];
+    [photosCollectionView reloadData];
+  }
+  
   
   self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [UIColor whiteColor],NSForegroundColorAttributeName,
                                   [UIColor whiteColor],NSBackgroundColorAttributeName,
                                   [UIFont fontWithName:@"Futura-CondensedExtraBold" size:21.0], NSFontAttributeName,
                                   nil];
-  
-  [self.navigationController setNavigationBarHidden:YES animated:NO];
-  [self.navigationController setToolbarHidden:YES animated:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -113,14 +125,22 @@
   
   cell.date.attributedText = photo.formattedDate;
   cell.timelineViewController = self;
-//  cell.initialFrame = cell.frame;
+  cell.initialFrame = cell.frame;
   
   UIGestureRecognizer* panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
   panGestureRecognizer.delegate = self;
   [cell addGestureRecognizer:panGestureRecognizer];
   
   [collectionView.panGestureRecognizer requireGestureRecognizerToFail:panGestureRecognizer];
-    
+  
+  if (cellsLoaded++ < 2) {
+    CGFloat y = cell.center.y;
+    cell.center = CGPointMake(cell.center.x, cell.center.y + 500);
+    [UIView animateWithDuration:0.75 animations:^{
+      cell.center = CGPointMake(cell.center.x, y);
+    }];
+  }
+  
   return cell;
 }
 
@@ -162,7 +182,6 @@
 }
 
 - (void)panDetected:(UIPanGestureRecognizer *)panRecognizer {
-  
   if (panRecognizer.state == UIGestureRecognizerStateBegan) {
     TimelineCollectionViewCell* contentContainer =  (TimelineCollectionViewCell*)panRecognizer.view;
     contentContainer.initialFrame = contentContainer.frame;
@@ -208,7 +227,6 @@
   if (1 == buttonIndex) {
     TimelineCollectionViewCell* cell = (TimelineCollectionViewCell*)[photosCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:alertView.tag inSection:0]];
     [self deletePhotoCell:cell];
-    NSLog(@"Delete");
   }
   
   if (0 == buttonIndex) {
@@ -216,8 +234,6 @@
     [UIView animateWithDuration:0.2
                      animations:^{cell.frame = cell.initialFrame; }
                      completion: nil];
-
-    NSLog(@"Cancel");
   }
 }
 

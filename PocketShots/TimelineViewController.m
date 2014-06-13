@@ -111,6 +111,7 @@
   
   cell.date.attributedText = photo.formattedDate;
   cell.timelineViewController = self;
+  cell.contentContainer.initialFrame = cell.contentContainer.frame;
   
   UIGestureRecognizer* panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
   panGestureRecognizer.delegate = self;

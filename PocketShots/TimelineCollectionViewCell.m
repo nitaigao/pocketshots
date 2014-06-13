@@ -13,7 +13,7 @@
 {
   self = [super initWithCoder:aDecoder];
   if (self) {
- 
+
   }
   return self;
 }
@@ -31,11 +31,6 @@
   [UIView animateWithDuration:0.4
                    animations:^{contentContainer.frame = contentContainer.initialFrame; }
                    completion: nil];
-}
-
-- (void)prepareForReuse {
-  [super prepareForReuse];
-  self.contentContainer.frame = self.contentContainer.initialFrame;
 }
 
 @end

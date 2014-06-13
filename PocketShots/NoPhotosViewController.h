@@ -1,9 +1,10 @@
 #import <UIKit/UIKit.h>
 
-@interface NoPhotosViewController : UIViewController
+@interface NoPhotosViewController : UIViewController {
+  BOOL animating;
+}
 
-@property (nonatomic, readwrite) NSInteger index;
-
-- (void)purge;
+@property (nonatomic, weak) IBOutlet UIView* welcomeView;
+@property (nonatomic, weak) IBOutlet UIImageView* downArrow;
 
 @end

@@ -59,13 +59,11 @@
 - (void)viewDidLoad {
   [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
   
-  UIViewController* emptyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EmptyViewController"];
+  emptyViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"EmptyViewController"];
   [self addChildViewController:emptyViewController];
-  photosCollectionView.emptyState_view = emptyViewController.view;
   
   self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:37/255.0 green:38/255.0 blue:40/255.0 alpha:1.0f];
   self.navigationController.toolbar.barTintColor = [UIColor colorWithRed:37/255.0 green:38/255.0 blue:40/255.0 alpha:1.0f];
- 
   
   UIImage *buttonImage = [UIImage imageNamed:@"button-camera.png"];
   UIBarButtonItem* cameraButtonItem = [UIBarButtonItem barItemWithImage:buttonImage target:self action:@selector(newPhoto)];
@@ -77,6 +75,10 @@
 - (void)animateInNav {
   [self.navigationController setNavigationBarHidden:NO animated:YES];
   [self.navigationController setToolbarHidden:NO animated:YES];
+}
+
+- (void)resetCellsLoaded {
+  cellsLoaded = 0;
 }
 
 - (void)animateInContent {
@@ -101,6 +103,15 @@
     photosCollectionView.delegate = self;
     [photoAlbum loadPhotos];
     [photosCollectionView reloadData];
+  }
+  
+  PhotoAlbum* dummyPhotoAlbum = [[PhotoAlbum alloc] initWithDirectory:[NSBundle mainBundle].documentsPath];
+  [dummyPhotoAlbum loadPhotos];
+  
+  if (dummyPhotoAlbum.photoCount <= 0) {
+    photosCollectionView.emptyState_view = emptyViewController.view;
+  } else {
+    photosCollectionView.emptyState_view = nil;
   }
   
   
@@ -201,11 +212,12 @@
   }
   
   if (panRecognizer.state == UIGestureRecognizerStateEnded) {
-    TimelineCollectionViewCell* cell =  (TimelineCollectionViewCell*)panRecognizer.view;
+    TimelineCollectionViewCell* cell = (TimelineCollectionViewCell*)panRecognizer.view;
     if (panRecognizer.view.center.x < 50) {
       [UIView animateWithDuration:0.4
-                       animations:^{panRecognizer.view.frame = CGRectMake(panRecognizer.view.frame.origin.x - 1000, panRecognizer.view.frame.origin.y, panRecognizer.view.frame.size.width, panRecognizer.view.frame.size.height);}
+                       animations:^{panRecognizer.view.frame = CGRectMake(panRecognizer.view.frame.origin.x - 500, panRecognizer.view.frame.origin.y, panRecognizer.view.frame.size.width, panRecognizer.view.frame.size.height);}
                        completion:^(BOOL finished) {
+                         
                          UIAlertView* deleteAlert = [[UIAlertView alloc] initWithTitle:@"Delete Photo"
                                                                                message:@"Are you sure?"
                                                                               delegate:self
@@ -213,6 +225,8 @@
                                                                      otherButtonTitles:@"Delete", nil];
                          deleteAlert.tag = [photosCollectionView indexPathForCell:cell].row;
                          [deleteAlert show];
+                         
+                         [cell setHidden:YES];
                        }];
     } else {
       TimelineCollectionViewCell* contentContainer =  (TimelineCollectionViewCell*)panRecognizer.view;
@@ -238,9 +252,14 @@
 }
 
 - (void)deletePhotoCell:(TimelineCollectionViewCell*)viewCell {
-    [photoAlbum deletePhoto:viewCell.photoPath];
-    NSIndexPath* indexPath = [photosCollectionView indexPathForCell:viewCell];
-    [photosCollectionView deleteItemsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil]];
+  [photoAlbum deletePhoto:viewCell.photoPath];
+  NSIndexPath* indexPath = [photosCollectionView indexPathForCell:viewCell];
+  
+  if (photoAlbum.photoCount <= 0) {
+    photosCollectionView.emptyState_view = emptyViewController.view;
+  }
+  
+  [photosCollectionView deleteItemsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil]];
 }
 
 @end

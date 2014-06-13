@@ -19,7 +19,7 @@
 
 - (void)prepareForReuse {
   [super prepareForReuse];
-  self.frame = CGRectMake(self.initialFrame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+  [self setHidden:NO];
 }
 
 @end

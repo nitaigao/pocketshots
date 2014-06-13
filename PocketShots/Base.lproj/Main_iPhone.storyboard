@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="OCk-2U-iGO">
             <objects>
-                <viewController storyboardIdentifier="EmptyViewController" id="IDS-LV-bX9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImportViewController" id="IDS-LV-bX9" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VuJ-lb-Qza"/>
                         <viewControllerLayoutGuide type="bottom" id="kHv-91-EMw"/>
@@ -32,6 +32,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7b-cc-i55" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="410" y="1235"/>
+        </scene>
+        <!--No Photos View Controller-->
+        <scene sceneID="VvU-kk-1Mg">
+            <objects>
+                <viewController storyboardIdentifier="EmptyViewController" automaticallyAdjustsScrollViewInsets="NO" id="cbH-tS-LMc" customClass="NoPhotosViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cKD-un-VT5"/>
+                        <viewControllerLayoutGuide type="bottom" id="9UY-eB-A7D"/>
+                    </layoutGuides>
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="xvn-eE-b5P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w5D-iv-iyl">
+                                <rect key="frame" x="10" y="600" width="300" height="150"/>
+                                <subviews>
+                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Progress!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzH-Wr-ArE">
+                                        <rect key="frame" x="0.0" y="10" width="300" height="61"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="28"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lets get started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7z1-io-0oN">
+                                        <rect key="frame" x="0.0" y="50" width="300" height="61"/>
+                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="28"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DownArrow" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-go-6Pr">
+                                        <rect key="frame" x="134" y="110" width="32" height="18"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25490196078431371" green="0.2627450980392157" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="downArrow" destination="hqS-go-6Pr" id="jWh-Ey-nRK"/>
+                        <outlet property="welcomeView" destination="w5D-iv-iyl" id="Mne-8w-0cU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="llb-yg-eOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-643" y="758"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Ri-fC-djH">
@@ -175,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgY-VW-XUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-80" y="166"/>
+            <point key="canvasLocation" x="-182" y="98"/>
         </scene>
         <!--Timeline View Controller - PROGRESS-->
         <scene sceneID="zmP-VF-gGR">
@@ -279,11 +328,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dg-u5-k34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-624" y="122"/>
+            <point key="canvasLocation" x="-643" y="98"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background" width="320" height="568"/>
+        <image name="DownArrow" width="32" height="18"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

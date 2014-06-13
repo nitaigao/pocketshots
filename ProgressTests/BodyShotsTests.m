@@ -1,6 +1,6 @@
 //
-//  PocketShotsTests.m
-//  PocketShotsTests
+//  ProgressTests.m
+//  ProgressTests
 //
 //  Created by Nicholas Kostelnik on 07/06/2014.
 //  Copyright (c) 2014 Studio. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface PocketShotsTests : XCTestCase
+@interface ProgressTests : XCTestCase
 
 @end
 
-@implementation PocketShotsTests
+@implementation ProgressTests
 
 - (void)setUp
 {

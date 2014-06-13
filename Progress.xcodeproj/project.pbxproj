@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20B771C519864D7092D40871 /* libPods-PocketShots.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */; };
+		20B771C519864D7092D40871 /* libPods-Progress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437FC3C3AAE4BA196FCA684 /* libPods-Progress.a */; };
 		4C322FB31947A2CA00361E44 /* NSDate+DateFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB21947A2CA00361E44 /* NSDate+DateFromString.m */; };
 		4C322FB61947A3D500361E44 /* NSFileManager+Filename.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB51947A3D500361E44 /* NSFileManager+Filename.m */; };
 		4C322FB91947A4B600361E44 /* NSBundle+Documents.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C322FB81947A4B600361E44 /* NSBundle+Documents.m */; };
@@ -41,7 +41,7 @@
 		4CCA90071943532600A3055B /* ImportSelectPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA90061943532600A3055B /* ImportSelectPhotosViewController.m */; };
 		4CE058A119448AAB007D01CB /* SetupImportPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE058A019448AAB007D01CB /* SetupImportPhotosViewController.m */; };
 		4CF42D7019448F7D00F00C4E /* ImportProcessingPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF42D6F19448F7D00F00C4E /* ImportProcessingPhotosViewController.m */; };
-		4E7AC8534079445E94243DFB /* libPods-PocketShotsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB173D754BA14A2BB92B323B /* libPods-PocketShotsTests.a */; };
+		4E7AC8534079445E94243DFB /* libPods-ProgressTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB173D754BA14A2BB92B323B /* libPods-ProgressTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,12 +50,12 @@
 			containerPortal = 4CCA8FB91943362A00A3055B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 4CCA8FC01943362A00A3055B;
-			remoteInfo = PocketShots;
+			remoteInfo = Progress;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketShots.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4437FC3C3AAE4BA196FCA684 /* libPods-Progress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Progress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C322FB11947A2CA00361E44 /* NSDate+DateFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateFromString.h"; sourceTree = "<group>"; };
 		4C322FB21947A2CA00361E44 /* NSDate+DateFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateFromString.m"; sourceTree = "<group>"; };
 		4C322FB41947A3D500361E44 /* NSFileManager+Filename.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Filename.h"; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 		4C956BCA194368C600CA299D /* NewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoViewController.h; sourceTree = "<group>"; };
 		4C956BCB194368C600CA299D /* NewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoViewController.m; sourceTree = "<group>"; };
 		4CA5D0F81946230B005136A4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		4CA5D0FA19462314005136A4 /* PocketShots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PocketShots.entitlements; sourceTree = SOURCE_ROOT; };
+		4CA5D0FA19462314005136A4 /* Progress.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Progress.entitlements; sourceTree = SOURCE_ROOT; };
 		4CB032851948FA9700B29224 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		4CB032861948FA9700B29224 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		4CB1A0A01949E8A100E9B4BF /* PhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoImageView.h; sourceTree = "<group>"; };
@@ -83,22 +83,22 @@
 		4CB1A0B0194B638B00E9B4BF /* TimelineCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineCollectionViewLayout.m; sourceTree = "<group>"; };
 		4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPhotosViewController.h; sourceTree = "<group>"; };
 		4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPhotosViewController.m; sourceTree = "<group>"; };
-		4CCA8FC11943362A00A3055B /* PocketShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCA8FC11943362A00A3055B /* Progress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Progress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA8FC41943362B00A3055B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CCA8FC61943362B00A3055B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4CCA8FC81943362B00A3055B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4CCA8FCC1943362B00A3055B /* PocketShots-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketShots-Info.plist"; sourceTree = "<group>"; };
+		4CCA8FCC1943362B00A3055B /* Progress-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Progress-Info.plist"; sourceTree = "<group>"; };
 		4CCA8FCE1943362B00A3055B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CCA8FD01943362B00A3055B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4CCA8FD21943362B00A3055B /* PocketShots-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketShots-Prefix.pch"; sourceTree = "<group>"; };
+		4CCA8FD21943362B00A3055B /* Progress-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Progress-Prefix.pch"; sourceTree = "<group>"; };
 		4CCA8FD31943362B00A3055B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4CCA8FD41943362B00A3055B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4CCA8FD71943362B00A3055B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		4CCA8FDA1943362B00A3055B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		4CCA8FDF1943362B00A3055B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4CCA8FE51943362B00A3055B /* PocketShotsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketShotsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CCA8FE51943362B00A3055B /* ProgressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProgressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CCA8FE61943362B00A3055B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4CCA8FEE1943362B00A3055B /* PocketShotsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PocketShotsTests-Info.plist"; sourceTree = "<group>"; };
+		4CCA8FEE1943362B00A3055B /* ProgressTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProgressTests-Info.plist"; sourceTree = "<group>"; };
 		4CCA8FF01943362B00A3055B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CCA8FFC1943375200A3055B /* TimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		4CCA8FFD1943375200A3055B /* TimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
@@ -112,9 +112,9 @@
 		4CE058A019448AAB007D01CB /* SetupImportPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupImportPhotosViewController.m; sourceTree = "<group>"; };
 		4CF42D6E19448F7D00F00C4E /* ImportProcessingPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportProcessingPhotosViewController.h; sourceTree = "<group>"; };
 		4CF42D6F19448F7D00F00C4E /* ImportProcessingPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportProcessingPhotosViewController.m; sourceTree = "<group>"; };
-		5E6590AEA99C4B2DAC17F5F2 /* Pods-PocketShotsTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketShotsTests.xcconfig"; path = "Pods/Pods-PocketShotsTests.xcconfig"; sourceTree = "<group>"; };
-		BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketShots.xcconfig"; path = "Pods/Pods-PocketShots.xcconfig"; sourceTree = "<group>"; };
-		EB173D754BA14A2BB92B323B /* libPods-PocketShotsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PocketShotsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E6590AEA99C4B2DAC17F5F2 /* Pods-ProgressTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProgressTests.xcconfig"; path = "Pods/Pods-ProgressTests.xcconfig"; sourceTree = "<group>"; };
+		BD7C404E9BD74F1091FE0EE0 /* Pods-Progress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Progress.xcconfig"; path = "Pods/Pods-Progress.xcconfig"; sourceTree = "<group>"; };
+		EB173D754BA14A2BB92B323B /* libPods-ProgressTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProgressTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +127,7 @@
 				4CCA8FC91943362B00A3055B /* UIKit.framework in Frameworks */,
 				4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */,
 				4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */,
-				20B771C519864D7092D40871 /* libPods-PocketShots.a in Frameworks */,
+				20B771C519864D7092D40871 /* libPods-Progress.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +138,7 @@
 				4CCA8FE71943362B00A3055B /* XCTest.framework in Frameworks */,
 				4CCA8FE91943362B00A3055B /* UIKit.framework in Frameworks */,
 				4CCA8FE81943362B00A3055B /* Foundation.framework in Frameworks */,
-				4E7AC8534079445E94243DFB /* libPods-PocketShotsTests.a in Frameworks */,
+				4E7AC8534079445E94243DFB /* libPods-ProgressTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,20 +211,20 @@
 		4CCA8FB81943362A00A3055B = {
 			isa = PBXGroup;
 			children = (
-				4CCA8FCA1943362B00A3055B /* PocketShots */,
-				4CCA8FEC1943362B00A3055B /* PocketShotsTests */,
+				4CCA8FCA1943362B00A3055B /* Progress */,
+				4CCA8FEC1943362B00A3055B /* ProgressTests */,
 				4CCA8FC31943362A00A3055B /* Frameworks */,
 				4CCA8FC21943362A00A3055B /* Products */,
-				BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */,
-				5E6590AEA99C4B2DAC17F5F2 /* Pods-PocketShotsTests.xcconfig */,
+				BD7C404E9BD74F1091FE0EE0 /* Pods-Progress.xcconfig */,
+				5E6590AEA99C4B2DAC17F5F2 /* Pods-ProgressTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
 		4CCA8FC21943362A00A3055B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4CCA8FC11943362A00A3055B /* PocketShots.app */,
-				4CCA8FE51943362B00A3055B /* PocketShotsTests.xctest */,
+				4CCA8FC11943362A00A3055B /* Progress.app */,
+				4CCA8FE51943362B00A3055B /* ProgressTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,13 +238,13 @@
 				4CCA8FC61943362B00A3055B /* CoreGraphics.framework */,
 				4CCA8FC81943362B00A3055B /* UIKit.framework */,
 				4CCA8FE61943362B00A3055B /* XCTest.framework */,
-				4437FC3C3AAE4BA196FCA684 /* libPods-PocketShots.a */,
-				EB173D754BA14A2BB92B323B /* libPods-PocketShotsTests.a */,
+				4437FC3C3AAE4BA196FCA684 /* libPods-Progress.a */,
+				EB173D754BA14A2BB92B323B /* libPods-ProgressTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4CCA8FCA1943362B00A3055B /* PocketShots */ = {
+		4CCA8FCA1943362B00A3055B /* Progress */ = {
 			isa = PBXGroup;
 			children = (
 				4C8EF01519463AF2004EE7BA /* Model */,
@@ -259,33 +259,33 @@
 				4CCA8FDF1943362B00A3055B /* Images.xcassets */,
 				4CCA8FCB1943362B00A3055B /* Supporting Files */,
 			);
-			path = PocketShots;
+			path = Progress;
 			sourceTree = "<group>";
 		};
 		4CCA8FCB1943362B00A3055B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4CA5D0FA19462314005136A4 /* PocketShots.entitlements */,
-				4CCA8FCC1943362B00A3055B /* PocketShots-Info.plist */,
+				4CA5D0FA19462314005136A4 /* Progress.entitlements */,
+				4CCA8FCC1943362B00A3055B /* Progress-Info.plist */,
 				4CCA8FCD1943362B00A3055B /* InfoPlist.strings */,
 				4CCA8FD01943362B00A3055B /* main.m */,
-				4CCA8FD21943362B00A3055B /* PocketShots-Prefix.pch */,
+				4CCA8FD21943362B00A3055B /* Progress-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4CCA8FEC1943362B00A3055B /* PocketShotsTests */ = {
+		4CCA8FEC1943362B00A3055B /* ProgressTests */ = {
 			isa = PBXGroup;
 			children = (
 				4CCA8FED1943362B00A3055B /* Supporting Files */,
 			);
-			path = PocketShotsTests;
+			path = ProgressTests;
 			sourceTree = "<group>";
 		};
 		4CCA8FED1943362B00A3055B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4CCA8FEE1943362B00A3055B /* PocketShotsTests-Info.plist */,
+				4CCA8FEE1943362B00A3055B /* ProgressTests-Info.plist */,
 				4CCA8FEF1943362B00A3055B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -318,9 +318,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4CCA8FC01943362A00A3055B /* PocketShots */ = {
+		4CCA8FC01943362A00A3055B /* Progress */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CCA8FF61943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShots" */;
+			buildConfigurationList = 4CCA8FF61943362B00A3055B /* Build configuration list for PBXNativeTarget "Progress" */;
 			buildPhases = (
 				407AD44E3C1A4BD29D99C11F /* Check Pods Manifest.lock */,
 				4CCA8FBD1943362A00A3055B /* Sources */,
@@ -332,14 +332,14 @@
 			);
 			dependencies = (
 			);
-			name = PocketShots;
-			productName = PocketShots;
-			productReference = 4CCA8FC11943362A00A3055B /* PocketShots.app */;
+			name = Progress;
+			productName = Progress;
+			productReference = 4CCA8FC11943362A00A3055B /* Progress.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4CCA8FE41943362B00A3055B /* PocketShotsTests */ = {
+		4CCA8FE41943362B00A3055B /* ProgressTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShotsTests" */;
+			buildConfigurationList = 4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "ProgressTests" */;
 			buildPhases = (
 				F803DA8211A3460CB14C96A6 /* Check Pods Manifest.lock */,
 				4CCA8FE11943362B00A3055B /* Sources */,
@@ -352,9 +352,9 @@
 			dependencies = (
 				4CCA8FEB1943362B00A3055B /* PBXTargetDependency */,
 			);
-			name = PocketShotsTests;
-			productName = PocketShotsTests;
-			productReference = 4CCA8FE51943362B00A3055B /* PocketShotsTests.xctest */;
+			name = ProgressTests;
+			productName = ProgressTests;
+			productReference = 4CCA8FE51943362B00A3055B /* ProgressTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -382,7 +382,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4CCA8FBC1943362A00A3055B /* Build configuration list for PBXProject "PocketShots" */;
+			buildConfigurationList = 4CCA8FBC1943362A00A3055B /* Build configuration list for PBXProject "Progress" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -395,8 +395,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4CCA8FC01943362A00A3055B /* PocketShots */,
-				4CCA8FE41943362B00A3055B /* PocketShotsTests */,
+				4CCA8FC01943362A00A3055B /* Progress */,
+				4CCA8FE41943362B00A3055B /* ProgressTests */,
 			);
 		};
 /* End PBXProject section */
@@ -451,7 +451,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-PocketShots-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-Progress-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D4074D9E3EC9455ABAF9D103 /* Copy Pods Resources */ = {
@@ -466,7 +466,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-PocketShotsTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-ProgressTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F803DA8211A3460CB14C96A6 /* Check Pods Manifest.lock */ = {
@@ -526,7 +526,7 @@
 /* Begin PBXTargetDependency section */
 		4CCA8FEB1943362B00A3055B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4CCA8FC01943362A00A3055B /* PocketShots */;
+			target = 4CCA8FC01943362A00A3055B /* Progress */;
 			targetProxy = 4CCA8FEA1943362B00A3055B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -641,17 +641,17 @@
 		};
 		4CCA8FF71943362B00A3055B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */;
+			baseConfigurationReference = BD7C404E9BD74F1091FE0EE0 /* Pods-Progress.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = PocketShots.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Progress.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PocketShots/PocketShots-Prefix.pch";
-				INFOPLIST_FILE = "PocketShots/PocketShots-Info.plist";
-				PRODUCT_NAME = PocketShots;
+				GCC_PREFIX_HEADER = "Progress/Progress-Prefix.pch";
+				INFOPLIST_FILE = "Progress/Progress-Info.plist";
+				PRODUCT_NAME = Progress;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -660,17 +660,17 @@
 		};
 		4CCA8FF81943362B00A3055B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD7C404E9BD74F1091FE0EE0 /* Pods-PocketShots.xcconfig */;
+			baseConfigurationReference = BD7C404E9BD74F1091FE0EE0 /* Pods-Progress.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = PocketShots.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Progress.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PocketShots/PocketShots-Prefix.pch";
-				INFOPLIST_FILE = "PocketShots/PocketShots-Info.plist";
-				PRODUCT_NAME = PocketShots;
+				GCC_PREFIX_HEADER = "Progress/Progress-Prefix.pch";
+				INFOPLIST_FILE = "Progress/Progress-Info.plist";
+				PRODUCT_NAME = Progress;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -679,22 +679,22 @@
 		};
 		4CCA8FFA1943362B00A3055B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E6590AEA99C4B2DAC17F5F2 /* Pods-PocketShotsTests.xcconfig */;
+			baseConfigurationReference = 5E6590AEA99C4B2DAC17F5F2 /* Pods-ProgressTests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketShots.app/PocketShots";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Progress.app/Progress";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PocketShots/PocketShots-Prefix.pch";
+				GCC_PREFIX_HEADER = "Progress/Progress-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PocketShotsTests/PocketShotsTests-Info.plist";
-				PRODUCT_NAME = PocketShotsTests;
+				INFOPLIST_FILE = "ProgressTests/ProgressTests-Info.plist";
+				PRODUCT_NAME = ProgressTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -702,18 +702,18 @@
 		};
 		4CCA8FFB1943362B00A3055B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E6590AEA99C4B2DAC17F5F2 /* Pods-PocketShotsTests.xcconfig */;
+			baseConfigurationReference = 5E6590AEA99C4B2DAC17F5F2 /* Pods-ProgressTests.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PocketShots.app/PocketShots";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Progress.app/Progress";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PocketShots/PocketShots-Prefix.pch";
-				INFOPLIST_FILE = "PocketShotsTests/PocketShotsTests-Info.plist";
-				PRODUCT_NAME = PocketShotsTests;
+				GCC_PREFIX_HEADER = "Progress/Progress-Prefix.pch";
+				INFOPLIST_FILE = "ProgressTests/ProgressTests-Info.plist";
+				PRODUCT_NAME = ProgressTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -722,7 +722,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4CCA8FBC1943362A00A3055B /* Build configuration list for PBXProject "PocketShots" */ = {
+		4CCA8FBC1943362A00A3055B /* Build configuration list for PBXProject "Progress" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CCA8FF41943362B00A3055B /* Debug */,
@@ -731,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CCA8FF61943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShots" */ = {
+		4CCA8FF61943362B00A3055B /* Build configuration list for PBXNativeTarget "Progress" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CCA8FF71943362B00A3055B /* Debug */,
@@ -740,7 +740,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "PocketShotsTests" */ = {
+		4CCA8FF91943362B00A3055B /* Build configuration list for PBXNativeTarget "ProgressTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4CCA8FFA1943362B00A3055B /* Debug */,

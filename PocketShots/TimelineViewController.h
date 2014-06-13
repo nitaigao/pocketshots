@@ -6,7 +6,7 @@
 
 @class TimelineCollectionViewCell;
 
-@interface TimelineViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewEmptyStateDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate> {
+@interface TimelineViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewEmptyStateDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate> {
   PhotoAlbum* photoAlbum;
 }
 

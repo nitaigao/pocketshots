@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7b-cc-i55" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgY-VW-XUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="-319"/>
+            <point key="canvasLocation" x="-80" y="166"/>
         </scene>
         <!--Timeline View Controller - PROGRESS-->
         <scene sceneID="zmP-VF-gGR">
@@ -194,67 +194,47 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90588235294117647" blue="0.9137254901960784" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="nQK-6Z-Vik">
-                                    <size key="itemSize" width="310" height="340"/>
+                                    <size key="itemSize" width="320" height="340"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <imageView key="backgroundView" appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" id="cAd-bG-rfM">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <cells>
                                     <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectonViewCell" id="qOZ-UE-uQr" customClass="TimelineCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="340"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IPJ-2t-T92">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="340"/>
-                                                    <subviews>
-                                                        <button appearanceType="userCustom" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMA-vD-bUG">
-                                                            <rect key="frame" x="125" y="200" width="55" height="30"/>
-                                                            <state key="normal" title="Cancel">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="cancelDelete:" destination="qOZ-UE-uQr" eventType="touchUpInside" id="DJR-nn-rhI"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button appearanceType="userCustom" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovR-Is-0ss">
-                                                            <rect key="frame" x="129" y="155" width="46" height="30"/>
-                                                            <state key="normal" title="Delete">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="deletePhoto:" destination="qOZ-UE-uQr" eventType="touchUpInside" id="nev-Td-wsW"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <view appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kx4-Ux-QQh" customClass="TimelineCollectionViewCellContentContainer">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="340"/>
+                                                <view appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kx4-Ux-QQh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
                                                     <subviews>
                                                         <view appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6S-39-Os6">
-                                                            <rect key="frame" x="0.0" y="40" width="310" height="300"/>
+                                                            <rect key="frame" x="0.0" y="40" width="320" height="300"/>
                                                             <subviews>
                                                                 <imageView autoresizesSubviews="NO" appearanceType="aqua" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIv-f5-bvS" customClass="PhotoImageView">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="300"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
                                                         <view appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqr-zI-2Is">
-                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                                             <subviews>
                                                                 <view appearanceType="userCustom" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U6a-it-3QD">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                                                     <color key="backgroundColor" red="0.77647058823529413" green="0.27450980392156865" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </view>
                                                                 <view appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uv6-yx-jLB">
-                                                                    <rect key="frame" x="5" y="0.0" width="305" height="40"/>
+                                                                    <rect key="frame" x="5" y="0.0" width="315" height="40"/>
                                                                     <subviews>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01/01/2000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0f-JA-bpl">
-                                                                            <rect key="frame" x="165" y="5" width="130" height="30"/>
+                                                                            <rect key="frame" x="175" y="5" width="130" height="30"/>
                                                                             <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="18"/>
                                                                             <color key="textColor" red="0.90196078431372551" green="0.90588235294117647" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -271,7 +251,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <size key="customSize" width="310" height="340"/>
+                                        <size key="customSize" width="320" height="340"/>
                                         <connections>
                                             <outlet property="contentContainer" destination="kx4-Ux-QQh" id="rzo-31-VWJ"/>
                                             <outlet property="date" destination="B0f-JA-bpl" id="SyE-Jc-XZC"/>
@@ -292,6 +272,7 @@
                     <navigationItem key="navigationItem" title="PROGRESS" id="c1w-LX-3u1"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="photosCollectionView" destination="MX0-KM-DQJ" id="5TX-hy-wMM"/>
                         <segue destination="UpV-jV-9e1" kind="modal" identifier="photo" id="Sif-h6-Yub"/>
@@ -299,43 +280,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Dg-u5-k34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-622" y="98"/>
-        </scene>
-        <!--Photo View Controller-->
-        <scene sceneID="Ksq-Ao-G0a">
-            <objects>
-                <viewController id="bbV-Pm-2Vi" customClass="PhotoViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0zs-KI-fUi"/>
-                        <viewControllerLayoutGuide type="bottom" id="Y2C-W2-ifE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Twf-cQ-neV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4XP-S1-yt1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="LBm-Ju-9d2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="uUJ-OH-BpE">
-                            <connections>
-                                <action selector="trashPhoto:" destination="bbV-Pm-2Vi" id="y6D-WW-8F7"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="photo" destination="4XP-S1-yt1" id="Y4B-r0-y4G"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="elB-El-ddr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-26" y="316"/>
+            <point key="canvasLocation" x="-624" y="122"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="320" height="568"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

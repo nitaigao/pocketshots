@@ -22,7 +22,7 @@
 		4CB1A0A21949E8A100E9B4BF /* PhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1A0A11949E8A100E9B4BF /* PhotoImageView.m */; };
 		4CB1A0A51949FF1300E9B4BF /* button-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB1A0A31949FF1300E9B4BF /* button-camera.png */; };
 		4CB1A0A8194A276300E9B4BF /* button-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB1A0A6194A276300E9B4BF /* button-camera@2x.png */; };
-		4CB1A0AE194A5E5600E9B4BF /* TimelineCollectionViewCellContentContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1A0AD194A5E5600E9B4BF /* TimelineCollectionViewCellContentContainer.m */; };
+		4CB1A0B1194B638B00E9B4BF /* TimelineCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1A0B0194B638B00E9B4BF /* TimelineCollectionViewLayout.m */; };
 		4CC6EA701944EA9F00582054 /* NoPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */; };
 		4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC41943362B00A3055B /* Foundation.framework */; };
 		4CCA8FC71943362B00A3055B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCA8FC61943362B00A3055B /* CoreGraphics.framework */; };
@@ -83,8 +83,8 @@
 		4CB1A0A11949E8A100E9B4BF /* PhotoImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoImageView.m; sourceTree = "<group>"; };
 		4CB1A0A41949FF1300E9B4BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/button-camera.png"; sourceTree = "<group>"; };
 		4CB1A0A7194A276300E9B4BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/button-camera@2x.png"; sourceTree = "<group>"; };
-		4CB1A0AC194A5E5600E9B4BF /* TimelineCollectionViewCellContentContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineCollectionViewCellContentContainer.h; sourceTree = "<group>"; };
-		4CB1A0AD194A5E5600E9B4BF /* TimelineCollectionViewCellContentContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineCollectionViewCellContentContainer.m; sourceTree = "<group>"; };
+		4CB1A0AF194B638B00E9B4BF /* TimelineCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineCollectionViewLayout.h; sourceTree = "<group>"; };
+		4CB1A0B0194B638B00E9B4BF /* TimelineCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineCollectionViewLayout.m; sourceTree = "<group>"; };
 		4CC6EA6E1944EA9F00582054 /* NoPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoPhotosViewController.h; sourceTree = "<group>"; };
 		4CC6EA6F1944EA9F00582054 /* NoPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoPhotosViewController.m; sourceTree = "<group>"; };
 		4CCA8FC11943362A00A3055B /* PocketShots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketShots.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,8 +197,8 @@
 				4C8EF01719463F35004EE7BA /* TimelineCollectionViewCell.m */,
 				4CB1A0A01949E8A100E9B4BF /* PhotoImageView.h */,
 				4CB1A0A11949E8A100E9B4BF /* PhotoImageView.m */,
-				4CB1A0AC194A5E5600E9B4BF /* TimelineCollectionViewCellContentContainer.h */,
-				4CB1A0AD194A5E5600E9B4BF /* TimelineCollectionViewCellContentContainer.m */,
+				4CB1A0AF194B638B00E9B4BF /* TimelineCollectionViewLayout.h */,
+				4CB1A0B0194B638B00E9B4BF /* TimelineCollectionViewLayout.m */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -502,7 +502,6 @@
 				4CB1A0A21949E8A100E9B4BF /* PhotoImageView.m in Sources */,
 				4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */,
 				4CC6EA701944EA9F00582054 /* NoPhotosViewController.m in Sources */,
-				4CB1A0AE194A5E5600E9B4BF /* TimelineCollectionViewCellContentContainer.m in Sources */,
 				4CCA90011943387500A3055B /* PhotoAlbum.m in Sources */,
 				4CCA8FFE1943375200A3055B /* TimelineViewController.m in Sources */,
 				4C850D6E194496010005A492 /* FinishSetupViewController.m in Sources */,
@@ -517,6 +516,7 @@
 				4C322FB61947A3D500361E44 /* NSFileManager+Filename.m in Sources */,
 				4CCA90041943398E00A3055B /* PhotoViewController.m in Sources */,
 				4CCA8FD51943362B00A3055B /* AppDelegate.m in Sources */,
+				4CB1A0B1194B638B00E9B4BF /* TimelineCollectionViewLayout.m in Sources */,
 				4CCA8FD11943362B00A3055B /* main.m in Sources */,
 				4C8EF01819463F35004EE7BA /* TimelineCollectionViewCell.m in Sources */,
 			);

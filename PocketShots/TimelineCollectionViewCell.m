@@ -3,20 +3,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "TimelineViewController.h"
-#import "TimelineCollectionViewCellContentContainer.h"
 
 @implementation TimelineCollectionViewCell
 
-@synthesize photo, photoContainer, statsContainer, date, photoPath, contentContainer, timelineViewController;
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-  self = [super initWithCoder:aDecoder];
-  if (self) {
-
-  }
-  return self;
-}
+@synthesize photo, photoContainer, statsContainer, date, photoPath, contentContainer, timelineViewController, initialFrame;
 
 - (void)setPhotoImage:(NSString*)photoImagePath {
   self.photoPath = photoImagePath;
@@ -27,10 +17,9 @@
   [timelineViewController deletePhotoCell:self];
 }
 
-- (IBAction)cancelDelete:(id)sender {
-  [UIView animateWithDuration:0.4
-                   animations:^{contentContainer.frame = contentContainer.initialFrame; }
-                   completion: nil];
-}
+//- (void)prepareForReuse {
+//  [super prepareForReuse];
+////  self.frame = self.initialFrame;
+//}
 
 @end

@@ -32,7 +32,7 @@
 
 + (instancetype)albumWithDirectory:(NSString*)directoryPath {
   PhotoAlbum* photoAlbum = [[PhotoAlbum alloc] initWithDirectory:directoryPath];
-  [photoAlbum loadPhotos];
+//  [photoAlbum loadPhotos];
   return photoAlbum;
 }
 
@@ -128,9 +128,13 @@
 
 - (void)savePhoto:(UIImage*)photo forDate:(NSDate*)date {
   NSString* photoPath = [PhotoAlbum uniquePhotoPath];
-  [UIImageJPEGRepresentation(photo, 1.0f) writeToFile:photoPath atomically:YES];
+  NSData* jpegData = UIImageJPEGRepresentation(photo, 1.0f);
+  [jpegData writeToFile:photoPath atomically:YES];
   [photos addObject:@{@"path":photoPath, @"date": date}];
   [self saveMetaData];
+  
+  ALAssetsLibrary* assetLibrary = [[ALAssetsLibrary alloc] init];
+  [assetLibrary writeImageDataToSavedPhotosAlbum:jpegData metadata:nil completionBlock:nil];
 }
 
 @end

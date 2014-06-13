@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UILabel* date;
 @property (nonatomic, strong) NSString* photoPath;
 
+@property (nonatomic, readwrite) CGRect initialFrame;
+
 @property (nonatomic, weak) TimelineViewController* timelineViewController;
 
 - (void)setPhotoImage:(NSString*)photoPath;

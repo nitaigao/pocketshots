@@ -1,17 +1,12 @@
 #import "TimelineViewController.h"
 
-#import "PhotoAlbum.h"
-
-#import "TimelineCollectionViewCell.h"
-#import "TimelineCollectionViewCellContentContainer.h"
-
-#import "PhotoViewController.h"
-
 #import "NSBundle+Documents.h"
 
-#import "Photo.h"
+#import "TimelineCollectionViewCell.h"
+#import "PhotoViewController.h"
 
-#import "QuartzCore/CALayer.h"
+#import "PhotoAlbum.h"
+#import "Photo.h"
 
 @interface UIBarButtonItem(MyCategory)
 
@@ -78,23 +73,30 @@
   [self setToolbarItems:[NSArray arrayWithObjects:left, cameraButtonItem, right, nil] animated:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-  [self.navigationController setNavigationBarHidden:NO animated:animated];
-  [self.navigationController setToolbarHidden:NO animated:animated];
-
+- (void)animateIn {
+  [self.navigationController setNavigationBarHidden:NO animated:YES];
+  [self.navigationController setToolbarHidden:NO animated:YES];
+  
   photosCollectionView.delegate = self;
+  [photoAlbum loadPhotos];
+  [photosCollectionView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [self performSelector:@selector(animateIn) withObject:nil afterDelay:1];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  [photoAlbum loadPhotos];
-  [photosCollectionView reloadData];
   
   self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                   [UIColor whiteColor],NSForegroundColorAttributeName,
                                   [UIColor whiteColor],NSBackgroundColorAttributeName,
                                   [UIFont fontWithName:@"Futura-CondensedExtraBold" size:21.0], NSFontAttributeName,
                                   nil];
+  
+  [self.navigationController setNavigationBarHidden:YES animated:NO];
+  [self.navigationController setToolbarHidden:YES animated:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -111,14 +113,14 @@
   
   cell.date.attributedText = photo.formattedDate;
   cell.timelineViewController = self;
-  cell.contentContainer.initialFrame = cell.contentContainer.frame;
+//  cell.initialFrame = cell.frame;
   
   UIGestureRecognizer* panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
   panGestureRecognizer.delegate = self;
-  [cell.contentContainer addGestureRecognizer:panGestureRecognizer];
+  [cell addGestureRecognizer:panGestureRecognizer];
   
   [collectionView.panGestureRecognizer requireGestureRecognizerToFail:panGestureRecognizer];
-  
+    
   return cell;
 }
 
@@ -156,19 +158,18 @@
 - (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
   CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
   BOOL result = (translation.y * translation.y < translation.x * translation.x);
-//  NSLog(@"%d", result);
   return result;
 }
 
 - (void)panDetected:(UIPanGestureRecognizer *)panRecognizer {
   
   if (panRecognizer.state == UIGestureRecognizerStateBegan) {
-    TimelineCollectionViewCellContentContainer* contentContainer =  (TimelineCollectionViewCellContentContainer*)panRecognizer.view;
+    TimelineCollectionViewCell* contentContainer =  (TimelineCollectionViewCell*)panRecognizer.view;
     contentContainer.initialFrame = contentContainer.frame;
   }
   
   if (panRecognizer.state == UIGestureRecognizerStateChanged) {
-    TimelineCollectionViewCellContentContainer* contentContainer =  (TimelineCollectionViewCellContentContainer*)panRecognizer.view;
+    TimelineCollectionViewCell* contentContainer =  (TimelineCollectionViewCell*)panRecognizer.view;
     
     CGPoint translation = [panRecognizer translationInView:panRecognizer.view];
     
@@ -181,16 +182,42 @@
   }
   
   if (panRecognizer.state == UIGestureRecognizerStateEnded) {
+    TimelineCollectionViewCell* cell =  (TimelineCollectionViewCell*)panRecognizer.view;
     if (panRecognizer.view.center.x < 50) {
       [UIView animateWithDuration:0.4
                        animations:^{panRecognizer.view.frame = CGRectMake(panRecognizer.view.frame.origin.x - 1000, panRecognizer.view.frame.origin.y, panRecognizer.view.frame.size.width, panRecognizer.view.frame.size.height);}
-                       completion:nil];
+                       completion:^(BOOL finished) {
+                         UIAlertView* deleteAlert = [[UIAlertView alloc] initWithTitle:@"Delete Photo"
+                                                                               message:@"Are you sure?"
+                                                                              delegate:self
+                                                                     cancelButtonTitle:@"Cancel"
+                                                                     otherButtonTitles:@"Delete", nil];
+                         deleteAlert.tag = [photosCollectionView indexPathForCell:cell].row;
+                         [deleteAlert show];
+                       }];
     } else {
-      TimelineCollectionViewCellContentContainer* contentContainer =  (TimelineCollectionViewCellContentContainer*)panRecognizer.view;
+      TimelineCollectionViewCell* contentContainer =  (TimelineCollectionViewCell*)panRecognizer.view;
       [UIView animateWithDuration:0.2
                        animations:^{panRecognizer.view.frame = contentContainer.initialFrame; }
                        completion: nil];
     }
+  }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+  if (1 == buttonIndex) {
+    TimelineCollectionViewCell* cell = (TimelineCollectionViewCell*)[photosCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:alertView.tag inSection:0]];
+    [self deletePhotoCell:cell];
+    NSLog(@"Delete");
+  }
+  
+  if (0 == buttonIndex) {
+    TimelineCollectionViewCell* cell =  (TimelineCollectionViewCell*)[photosCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:alertView.tag inSection:0]];
+    [UIView animateWithDuration:0.2
+                     animations:^{cell.frame = cell.initialFrame; }
+                     completion: nil];
+
+    NSLog(@"Cancel");
   }
 }
 

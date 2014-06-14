@@ -17,7 +17,6 @@
 		4C8EF01819463F35004EE7BA /* TimelineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EF01719463F35004EE7BA /* TimelineCollectionViewCell.m */; };
 		4C956BC919435F9200CA299D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C956BC819435F9200CA299D /* AssetsLibrary.framework */; };
 		4C956BCC194368C600CA299D /* NewPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C956BCB194368C600CA299D /* NewPhotoViewController.m */; };
-		4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA5D0F81946230B005136A4 /* GameKit.framework */; };
 		4CB032871948FA9700B29224 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB032861948FA9700B29224 /* Photo.m */; };
 		4CB1A0A21949E8A100E9B4BF /* PhotoImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1A0A11949E8A100E9B4BF /* PhotoImageView.m */; };
 		4CB1A0B1194B638B00E9B4BF /* TimelineCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1A0B0194B638B00E9B4BF /* TimelineCollectionViewLayout.m */; };
@@ -70,11 +69,10 @@
 		4C850D741944A1AA0005A492 /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
 		4C8EF01619463F35004EE7BA /* TimelineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineCollectionViewCell.h; sourceTree = "<group>"; };
 		4C8EF01719463F35004EE7BA /* TimelineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineCollectionViewCell.m; sourceTree = "<group>"; };
+		4C8EFD73194CC0010050A17B /* Progress.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Progress.entitlements; sourceTree = "<group>"; };
 		4C956BC819435F9200CA299D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		4C956BCA194368C600CA299D /* NewPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoViewController.h; sourceTree = "<group>"; };
 		4C956BCB194368C600CA299D /* NewPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoViewController.m; sourceTree = "<group>"; };
-		4CA5D0F81946230B005136A4 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		4CA5D0FA19462314005136A4 /* Progress.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Progress.entitlements; sourceTree = SOURCE_ROOT; };
 		4CB032851948FA9700B29224 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		4CB032861948FA9700B29224 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		4CB1A0A01949E8A100E9B4BF /* PhotoImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoImageView.h; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				4C956BC919435F9200CA299D /* AssetsLibrary.framework in Frameworks */,
 				4CCA8FC71943362B00A3055B /* CoreGraphics.framework in Frameworks */,
 				4CCA8FC91943362B00A3055B /* UIKit.framework in Frameworks */,
-				4CA5D0F91946230B005136A4 /* GameKit.framework in Frameworks */,
 				4CCA8FC51943362B00A3055B /* Foundation.framework in Frameworks */,
 				20B771C519864D7092D40871 /* libPods-Progress.a in Frameworks */,
 			);
@@ -232,7 +229,6 @@
 		4CCA8FC31943362A00A3055B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4CA5D0F81946230B005136A4 /* GameKit.framework */,
 				4C956BC819435F9200CA299D /* AssetsLibrary.framework */,
 				4CCA8FC41943362B00A3055B /* Foundation.framework */,
 				4CCA8FC61943362B00A3055B /* CoreGraphics.framework */,
@@ -265,7 +261,7 @@
 		4CCA8FCB1943362B00A3055B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4CA5D0FA19462314005136A4 /* Progress.entitlements */,
+				4C8EFD73194CC0010050A17B /* Progress.entitlements */,
 				4CCA8FCC1943362B00A3055B /* Progress-Info.plist */,
 				4CCA8FCD1943362B00A3055B /* InfoPlist.strings */,
 				4CCA8FD01943362B00A3055B /* main.m */,
@@ -370,10 +366,10 @@
 						DevelopmentTeam = QQ6H83VL9N;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -645,7 +641,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Progress.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -664,7 +659,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Progress.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

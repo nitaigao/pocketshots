@@ -106,10 +106,10 @@
   NSURL* photoURL = [photosURLs objectAtIndex:index];
   [assetLibrary assetForURL:photoURL resultBlock:^(ALAsset *asset) {
     
-    Byte *buffer = (Byte*)malloc(asset.defaultRepresentation.size);
+    Byte *buffer = (Byte*)malloc((NSUInteger)asset.defaultRepresentation.size);
     NSInteger length = [asset.defaultRepresentation getBytes:buffer
                                                   fromOffset: 0.0
-                                                      length:asset.defaultRepresentation.size
+                                                      length:(NSUInteger)asset.defaultRepresentation.size
                                                        error:nil];
     
     NSString* photoPath = [PhotoAlbum uniquePhotoPath];
